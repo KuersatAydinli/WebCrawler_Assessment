@@ -6,7 +6,7 @@ import os, os.path
 class TestCrawlerJournalOfManagement(unittest.TestCase):
     def testJanuary(self):
         Dir = 'F:/Wifo_5_Semester/CrowdSourcing/WebCrawler_Assessment/Src/Journal of Management/January/'
-        self.assertEqual(len([name for name in os.listdir(Dir)]),11)
+        self.assertEqual(len([name for name in os.listdir(Dir) if os.path.isfile(os.path.join(Dir, name))]),11)
 
     def testFebruary(self):
         Dir = 'F:/Wifo_5_Semester/CrowdSourcing/WebCrawler_Assessment/Src/Journal of Management/February/'
@@ -29,6 +29,6 @@ class TestCrawlerJournalOfManagement(unittest.TestCase):
         self.assertEqual(len([name for name in os.listdir(Dir)]),12)
 
     def testNovember(self):
-        Dir = 'F:/Wifo_5_Semester/CrowdSourcing/WebCrawler_Assessment/Src/Journal of Management/September/'
+        Dir = 'F:/Wifo_5_Semester/CrowdSourcing/WebCrawler_Assessment/Src/Journal of Management/November/'
         self.assertEqual(len([name for name in os.listdir(Dir)]),9)
 

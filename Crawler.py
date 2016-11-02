@@ -14,7 +14,7 @@ from pdfminer.pdfdocument import PDFDocument
 
 base_url = 'http://jom.sagepub.com/content/40/1.toc?hwshib2=authn%3A1478163376%3A20161102%253A8a26d5df-f892-4fa2-afc6-c4825e150c66%3A0%3A0%3A0%3Ai77sfFF%2FA9DR8Jvym4MjiQ%3D%3D'
 res = urllib2.urlopen(base_url).read()
-print res
+#print res
 #tree = lxml.html.fromstring(res.read())
 
 class MyHTMLParser(HTMLParser):
@@ -27,7 +27,7 @@ class MyHTMLParser(HTMLParser):
     def handle_data(self, data):
         print "Encountered some data  :", data
 
-class ScrapeAmericanSocJournal():
+class ScrapeJournalOfManagement():
     base_urls = {}
     base_urls['January'] = 'http://jom.sagepub.com/content/40/1.toc'
     base_urls['February'] = 'http://jom.sagepub.com/content/40/2.toc'
@@ -42,7 +42,7 @@ class ScrapeAmericanSocJournal():
         file = open(path, 'wb')
         file.write(response.read())
         file.close()
-        print("Completed")
+        print("Download Complete for "+str(download_url))
 
     def get_pdf_links(self):
         links_per_month = {}
@@ -58,15 +58,16 @@ class ScrapeAmericanSocJournal():
                 correct_pdf_links.append(link)
 
             for month,link in self.base_urls.iteritems():
-                if (link==url):
+                if (link == url):
                     links_per_month[month] = correct_pdf_links
+        return links_per_month
 
-def download_file(download_url, path):
-    response = urllib2.urlopen(download_url)
-    file = open(path, 'wb')
-    file.write(response.read())
-    file.close()
-    print("Completed")
+# def download_file(download_url, path):
+#     response = urllib2.urlopen(download_url)
+#     file = open(path, 'wb')
+#     file.write(response.read())
+#     file.close()
+#     print("Completed")
 
 # def get_title(download_url):
 #     body = urllib2.urlopen(download_url())
@@ -75,25 +76,34 @@ def download_file(download_url, path):
 
 
 print 'RESULT'
-doc2 = lxml.html.parse(urllib2.urlopen(base_url))
+# doc2 = lxml.html.parse(urllib2.urlopen(base_url))
+#
+# links = lxml.html.fromstring(urllib2.urlopen(base_url).read()).xpath('//a/@href')
+# print links
+# pdf_links = []
+# for link in links:
+#     if 'full.pdf' in link:
+#         pdf_links.append(link)
+#
+# print pdf_links
+#
+# correct_pdf_links = []
+# for pdf_link in pdf_links:
+#     link = 'http://jom.sagepub.com'+pdf_link[:-5]
+#     correct_pdf_links.append(link)
+#
+# print correct_pdf_links
 
-links = lxml.html.fromstring(urllib2.urlopen(base_url).read()).xpath('//a/@href')
-print links
-pdf_links = []
-for link in links:
-    if 'full.pdf' in link:
-        pdf_links.append(link)
+#
+# count = 1
+# for link in correct_pdf_links:
+#     download_file(link,'Src/Journal of Management/January/Doc'+str(count)+'.pdf')
+#     count = count+1
 
-print pdf_links
-
-correct_pdf_links = []
-for pdf_link in pdf_links:
-    link = 'http://jom.sagepub.com'+pdf_link[:-5]
-    correct_pdf_links.append(link)
-
-print correct_pdf_links
-
-count = 1
-for link in correct_pdf_links:
-    download_file(link,'Src/Journal of Management/January/Doc'+str(count)+'.pdf')
-    count = count+1
+basicCrawler = ScrapeJournalOfManagement()
+all_links_JournalOfManagement = basicCrawler.get_pdf_links()
+for month, links in all_links_JournalOfManagement.iteritems():
+    counter = 1
+    for link in links:
+        basicCrawler.download_file(link,'Src/Journal of Management/'+month+'/Doc'+str(counter)+'.pdf')
+        counter += 1
