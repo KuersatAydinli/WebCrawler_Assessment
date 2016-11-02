@@ -1,6 +1,8 @@
 # coding=utf-8
 import urllib2
 import webbrowser
+
+import mechanize as mechanize
 import pdfkit
 import httplib2
 import lxml.html
@@ -24,17 +26,13 @@ class ScrapeJournalOfSociology():
     jar = cookielib.FileCookieJar("cookies")
     opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(jar))
 
-    jarDownload = cookielib.FileCookieJar("cookiesDownload")
-    openerDownload = urllib2.build_opener(urllib2.HTTPCookieProcessor(jarDownload))
-
-
     def download_file(self, download_url, path):
         """
 
         :param download_url: URL from where to download the content
         :param path: PATH for saving document
         """
-        response = self.openerDownload.open(download_url).read()
+        response = self.opener.open(download_url).read()
         file = open(path, 'wb')
         file.write(response)
         file.close()
@@ -52,6 +50,10 @@ class ScrapeJournalOfSociology():
             for month, link in self.base_urls.iteritems():
                 if (link == url):
                     links_per_month[month] = correct_pdf_links
+        response = self.opener.open('http://www.journals.uchicago.edu/doi/pdfplus/10.1086/677061').read()
+        file = open('out.pdf', 'wb')
+        file.write(response)
+        file.close()
         return links_per_month
 
 
@@ -80,15 +82,51 @@ myclass = ScrapeJournalOfSociology()
 #     print 'month: ' + str(month)
 #     print 'len: ' + str(len(links))
 #     print '======'
-myclass.download_file('http://www.journals.uchicago.edu/doi/pdfplus/10.1086/677061',
-                      'F:/Wifo_5_Semester/CrowdSourcing/WebCrawler_Assessment/Src/American Journal of Sociology/January/Doc1.pdf')
 
-#pdfkit.from_url('http://www.journals.uchicago.edu/doi/pdfplus/10.1086/677061','out.pdf')
+# myclass.download_file('http://www.journals.uchicago.edu/doi/pdfplus/10.1086/677061',
+#                       'F:/Wifo_5_Semester/CrowdSourcing/WebCrawler_Assessment/Src/American Journal of Sociology/January/Doc1.pdf')
+sample_url = 'http://www.journals.uchicago.edu/doi/pdfplus/10.1086/677061'
+# req = requests.get("http://www.journals.uchicago.edu/doi/pdfplus/10.1086/677061")
+# print req
+# file = open('F:/Wifo_5_Semester/CrowdSourcing/WebCrawler_Assessment/Src/American Journal of Sociology/January/Doc1.pdf', 'wb')
+# file.write(req.content)
+# file.close()
 
-# urllib.urlretrieve("http://www.journals.uchicago.edu/doi/pdfplus/10.1086/677061",
-#                    "F:/Wifo_5_Semester/CrowdSourcing/WebCrawler_Assessment/Src/American Journal of Sociology/January/Doc2")
+# pdfkit.from_url('http://www.journals.uchicago.edu/doi/pdfplus/10.1086/677061','out.pdf')
+
+# myclass.download_file("http://www.journals.uchicago.edu/doi/pdfplus/10.1086/677061",
+#                    "F:/Wifo_5_Semester/CrowdSourcing/WebCrawler_Assessment/Src/American Journal of Sociology/January/Doc2.pdf")
+
+# myclass.get_pdf_links()
+
+# Browser
+br = mechanize.Browser()
+
+# Cookie Jar
+cj = cookielib.LWPCookieJar()
+br.set_cookiejar(cj)
+
+# Browser options
+br.set_handle_equiv(True)
+br.set_handle_redirect(True)
+br.set_handle_referer(True)
+br.set_handle_robots(False)
+
+# Follows refresh 0 but not hangs on refresh > 0
+br.set_handle_refresh(mechanize._http.HTTPRefreshProcessor(), max_time=1)
+
+# Want debugging messages?
+# br.set_debug_http(True)
+# br.set_debug_redirects(True)
+# br.set_debug_responses(True)
+
+
+f = br.retrieve(sample_url)
+filenew = open('out.pdf', 'wb')
+filenew.write(f)
+filenew.close()
 print 'retrieved'
-#webbrowser.open('http://www.journals.uchicago.edu/doi/pdfplus/10.1086/677061')
+# webbrowser.open('http://www.journals.uchicago.edu/doi/pdfplus/10.1086/677061')
 
 # jar = cookielib.FileCookieJar("cookies")
 # opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(jar))
@@ -97,7 +135,6 @@ print 'retrieved'
 # print "Getting page"
 # response = opener.open(sample_url).read()
 # print '============================================================RESPONSE'
-# #print response
 # print '============================================================RESPONSE'
 # print '============================================================newlinks'
 # #newlinks = lxml.html.fromstring(opener.open(sample_url).read()).xpath('//table//a[contains(@prop,'Foo')])
