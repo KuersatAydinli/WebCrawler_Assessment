@@ -1,5 +1,7 @@
 # coding=utf-8
 import urllib2
+import webbrowser
+import pdfkit
 import httplib2
 import lxml.html
 from lxml import etree
@@ -9,6 +11,7 @@ import requests
 import urllib
 from io import StringIO, BytesIO
 import cookielib
+import wkhtmltopdf
 
 
 class ScrapeJournalOfSociology():
@@ -21,13 +24,17 @@ class ScrapeJournalOfSociology():
     jar = cookielib.FileCookieJar("cookies")
     opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(jar))
 
+    jarDownload = cookielib.FileCookieJar("cookiesDownload")
+    openerDownload = urllib2.build_opener(urllib2.HTTPCookieProcessor(jarDownload))
+
+
     def download_file(self, download_url, path):
         """
 
         :param download_url: URL from where to download the content
         :param path: PATH for saving document
         """
-        response = self.opener.open(download_url).read()
+        response = self.openerDownload.open(download_url).read()
         file = open(path, 'wb')
         file.write(response)
         file.close()
@@ -48,30 +55,40 @@ class ScrapeJournalOfSociology():
         return links_per_month
 
 
-sample_url = 'http://www.journals.uchicago.edu/toc/ajs/2014/119/4'
-links = lxml.html.fromstring(urllib2.urlopen('http://www.journals.uchicago.edu/toc/ajs/2014/119/4').read()).xpath(
-    '//a/@href')
-print links
+# sample_url = 'http://www.journals.uchicago.edu/toc/ajs/2014/119/4'
+# links = lxml.html.fromstring(urllib2.urlopen('http://www.journals.uchicago.edu/toc/ajs/2014/119/4').read()).xpath(
+#     '//a/@href')
+# print links
 # print lxml.html.fromstring(urllib2.urlopen('http://www.journals.uchicago.edu/toc/ajs/2014/119/4').read())
 # print urllib2.urlopen(sample_url).read()
 
 
 print '====================='
-
-content = urllib2.urlopen(sample_url).read()
-docum = lxml.html.fromstring(content)
-docum.make_links_absolute(sample_url)
-print lxml.html.html_to_xhtml(docum)
-
-soup2 = BeautifulSoup(urllib2.urlopen(sample_url).read())
+#
+# content = urllib2.urlopen(sample_url).read()
+# docum = lxml.html.fromstring(content)
+# docum.make_links_absolute(sample_url)
+# print lxml.html.html_to_xhtml(docum)
+#
+# soup2 = BeautifulSoup(urllib2.urlopen(sample_url).read())
 
 myclass = ScrapeJournalOfSociology()
-# myclass.download_file('http://www.journals.uchicago.edu/doi/pdfplus/10.1086/677061',
-#                       'F:/Wifo_5_Semester/CrowdSourcing/WebCrawler_Assessment/Src/American Journal of Sociology/January/Doc1.pdf')
+# allinks = myclass.get_pdf_links()
+# print 'allinks'
+# print allinks
+# for month,links in allinks.iteritems():
+#     print 'month: ' + str(month)
+#     print 'len: ' + str(len(links))
+#     print '======'
+myclass.download_file('http://www.journals.uchicago.edu/doi/pdfplus/10.1086/677061',
+                      'F:/Wifo_5_Semester/CrowdSourcing/WebCrawler_Assessment/Src/American Journal of Sociology/January/Doc1.pdf')
 
-urllib.urlretrieve("http://www.journals.uchicago.edu/doi/pdfplus/10.1086/677061",
-                   "F:/Wifo_5_Semester/CrowdSourcing/WebCrawler_Assessment/Src/American Journal of Sociology/January/Doc1.pdf")
+#pdfkit.from_url('http://www.journals.uchicago.edu/doi/pdfplus/10.1086/677061','out.pdf')
+
+# urllib.urlretrieve("http://www.journals.uchicago.edu/doi/pdfplus/10.1086/677061",
+#                    "F:/Wifo_5_Semester/CrowdSourcing/WebCrawler_Assessment/Src/American Journal of Sociology/January/Doc2")
 print 'retrieved'
+#webbrowser.open('http://www.journals.uchicago.edu/doi/pdfplus/10.1086/677061')
 
 # jar = cookielib.FileCookieJar("cookies")
 # opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(jar))
