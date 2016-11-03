@@ -47,11 +47,11 @@ class ScrapeJournalOfSociology():
 crawlerJournalSoc = ScrapeJournalOfSociology()
 allLinks_JournalOfSociology = crawlerJournalSoc.get_pdf_links()
 for month, links in allLinks_JournalOfSociology.iteritems():
-    if month != 'January':
+    if month == 'January':
         counter = 1
         for link in links:
             crawlerJournalSoc.download_file(link,
-                                            "F:/Wifo_5_Semester/CrowdSourcing/WebCrawler_Assessment/Src/American Journal of Sociology/"
+                                            "F:/Dropbox/Dropbox/WebCrawler_Assessment/American Journal of Sociology/"
                                             + month + '/Doc' + str(counter) + '.pdf')
             counter += 1
         print 'DOWNLOAD COMPLETED FOR ' + str(month).upper()

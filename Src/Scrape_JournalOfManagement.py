@@ -61,48 +61,31 @@ class ScrapeJournalOfManagement():
 basicCrawler = ScrapeJournalOfManagement()
 all_links_JournalOfManagement = basicCrawler.get_pdf_links()
 # Iterate through each month and download all PDF links from that month
-# for month, links in all_links_JournalOfManagement.iteritems():
-#     counter = 1
-#     for link in links:
-#         basicCrawler.download_file(link, 'F:/Dropbox/Dropbox/WebCrawler_Assessment/Journal of Management/'
-#                                    + month + '/Doc' + str(counter) + '.pdf')
-#         counter += 1
-#     print 'DOWNLOAD COMPLETED FOR ' + str(month).upper()
+for month, links in all_links_JournalOfManagement.iteritems():
+    counter = 1
+    for link in links:
+        basicCrawler.download_file(link, 'F:/Dropbox/Dropbox/WebCrawler_Assessment/Journal of Management/'
+                                   + month + '/Doc' + str(counter) + '.pdf')
+        counter += 1
+    print 'DOWNLOAD COMPLETED FOR ' + str(month).upper()
 
 # print all_links_JournalOfManagement
-
-# for month, links in basicCrawler.base_urls.iteritems():
-#     if month == 'February':
-#         print 'Names for February: '
-#         # print lxml.html.fromstring(urllib2.urlopen(link).read()).text()
-#         primaryName = lxml.html.fromstring(urllib2.urlopen(links).read()).xpath(
-#             "//h4[@class = 'cit-title-group']/text()")
-#         descName = lxml.html.fromstring(urllib2.urlopen(links).read()).xpath(
-#             "//h4[@class = 'cit-title-group']/descendant::*/text()")
-#         fullName = ""
-#         if len(descName)>1:
-#             concatDescName = "".join(descName)
-#             fullName = str(primaryName)+str(concatDescName)
-#             print (links, concatDescName)
-#         else:
-#             fullName = str(primaryName)+str(descName)
-#             print (links, fullName)
 
 
 # //div/descendant::h4[@class="cit-title-group" and /descendant::a[@href="/content/40/2/353.full.pdf+html"]]
 # XPATH: /html[1]/body[1]/div[1]/div[8]/form[1]/div[.//h4[@class="cit-title-group"] and .//a[@href="/content/40/2/353.full.pdf+html"]]//h4/text()[1]
-for month, links in basicCrawler.get_pdf_links().iteritems():
-    if month == 'February':
-        print 'Names for February: '
-        link_name_dictionnaire = {}
-        baselink = basicCrawler.base_urls.get(month)
-        print baselink
-        content = lxml.html.fromstring(urllib2.urlopen(baselink).read())
-        # print lxml.html.fromstring(urllib2.urlopen(link).read()).text()
-        for link in links:
-            correctLink = link[22:] + '+html'
-            primaryName = content.xpath("//div/descendant::h4[@class='cit-title-group' and /descendant::a[@href='"
-                    + str(correctLink) + "']]/text()")
-            link_name_dictionnaire[link] = primaryName
-            print link_name_dictionnaire
-        exit()
+# for month, links in basicCrawler.get_pdf_links().iteritems():
+#     if month == 'February':
+#         print 'Names for February: '
+#         link_name_dictionnaire = {}
+#         baselink = basicCrawler.base_urls.get(month)
+#         print baselink
+#         content = lxml.html.fromstring(urllib2.urlopen(baselink).read())
+#         # print lxml.html.fromstring(urllib2.urlopen(link).read()).text()
+#         for link in links:
+#             correctLink = link[22:] + '+html'
+#             primaryName = content.xpath("//div/descendant::h4[@class='cit-title-group' and /descendant::a[@href='"
+#                     + str(correctLink) + "']]/text()")
+#             link_name_dictionnaire[link] = primaryName
+#             print link_name_dictionnaire
+#         exit()
