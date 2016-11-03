@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="076176eb-6392-4c02-b95e-c171b5ab60e2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Src/Scrape_AmericanJournalOfSociology.py" afterPath="$PROJECT_DIR$/Src/Scrape_AmericanJournalOfSociology.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Src/Scrape_JournalOfManagement.py" afterPath="$PROJECT_DIR$/Src/Scrape_JournalOfManagement.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Src/Test.py" afterPath="$PROJECT_DIR$/Src/Test.py" />
     </list>
     <ignored path="WebCrawler_Assessment.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -19,9 +19,10 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/WebCrawler_Assessment$Crawler__1_.coverage" NAME="Crawler (1) Coverage Results" MODIFIED="1478087435726" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/WebCrawler_Assessment$Unittests_in_TestCrawlerJournalOfManagement__1_.coverage" NAME="Unittests in TestCrawlerJournalOfManagement (1) Coverage Results" MODIFIED="1478169609976" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test" />
+    <SUITE FILE_PATH="coverage/WebCrawler_Assessment$Scrape_JournalOfManagement.coverage" NAME="Scrape_JournalOfManagement Coverage Results" MODIFIED="1478177153206" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Src" />
     <SUITE FILE_PATH="coverage/WebCrawler_Assessment$Unittest_TestCrawlerJournalOfManagement_testMarch.coverage" NAME="Unittest TestCrawlerJournalOfManagement.testMarch Coverage Results" MODIFIED="1478087886774" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test" />
-    <SUITE FILE_PATH="coverage/WebCrawler_Assessment$Test.coverage" NAME="Test Coverage Results" MODIFIED="1478034502607" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Src" />
     <SUITE FILE_PATH="coverage/WebCrawler_Assessment$Crawler.coverage" NAME="Crawler Coverage Results" MODIFIED="1478039585715" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Src" />
+    <SUITE FILE_PATH="coverage/WebCrawler_Assessment$Test.coverage" NAME="Test Coverage Results" MODIFIED="1478175556980" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Src" />
     <SUITE FILE_PATH="coverage/WebCrawler_Assessment$Unittests_in_TestCrawlerJournalOfManagement.coverage" NAME="Unittests in TestCrawlerJournalOfManagement Coverage Results" MODIFIED="1478087962691" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test" />
     <SUITE FILE_PATH="coverage/WebCrawler_Assessment$Scrape_AmericanJournalOfSociology.coverage" NAME="Scrape_AmericanJournalOfSociology Coverage Results" MODIFIED="1478168852264" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Src" />
     <SUITE FILE_PATH="coverage/WebCrawler_Assessment$Unittests_in_Test.coverage" NAME="Unittests in Test Coverage Results" MODIFIED="1478034667494" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test" />
@@ -41,7 +42,7 @@
         <entry file="file://$PROJECT_DIR$/Src/Test.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="22" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
+              <caret line="2" column="57" selection-start-line="2" selection-start-column="57" selection-end-line="2" selection-end-column="66" />
               <folding />
             </state>
           </provider>
@@ -59,11 +60,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Scrape_JournalOfManagement.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Scrape_JournalOfManagement.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Src/Scrape_JournalOfManagement.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="67" column="20" selection-start-line="63" selection-start-column="0" selection-end-line="67" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.38765007">
+              <caret line="92" column="9" selection-start-line="92" selection-start-column="9" selection-end-line="92" selection-end-column="9" />
               <folding>
                 <element signature="e#15#29#0" expanded="true" />
               </folding>
@@ -71,11 +72,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Scrape_AmericanJournalOfSociology.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Scrape_AmericanJournalOfSociology.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Src/Scrape_AmericanJournalOfSociology.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6930023">
-              <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
               <folding>
                 <element signature="e#15#31#0" expanded="true" />
               </folding>
@@ -142,7 +143,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Src/Test.py" />
         <option value="$PROJECT_DIR$/Test/Test.py" />
         <option value="$PROJECT_DIR$/Src/Crawler.py" />
         <option value="$PROJECT_DIR$/README.md" />
@@ -151,6 +151,8 @@
         <option value="$PROJECT_DIR$/Crawler.py" />
         <option value="$PROJECT_DIR$/Test/TestAmericanJournalOfSociology.py" />
         <option value="$PROJECT_DIR$/Src/Scrape_AmericanJournalOfSociology.py" />
+        <option value="$PROJECT_DIR$/Src/Test.py" />
+        <option value="$PROJECT_DIR$/Src/Scrape_JournalOfManagement.py" />
       </list>
     </option>
   </component>
@@ -240,53 +242,7 @@
       <recent name="F:\Wifo_5_Semester\CrowdSourcing\WebCrawler_Assessment\Src" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests in TestCrawlerJournalOfManagement (1)">
-    <configuration default="false" name="Unittest TestCrawlerJournalOfManagement.testJanuary" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="WebCrawler_Assessment" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="F:\Wifo_5_Semester\CrowdSourcing\WebCrawler_Assessment\Test\TestJournalOfManagement.py" />
-      <option name="CLASS_NAME" value="TestCrawlerJournalOfManagement" />
-      <option name="METHOD_NAME" value="testJanuary" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_METHOD" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Unittest TestCrawlerJournalOfManagement.testFebruary" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="WebCrawler_Assessment" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="F:\Wifo_5_Semester\CrowdSourcing\WebCrawler_Assessment\Test\TestJournalOfManagement.py" />
-      <option name="CLASS_NAME" value="TestCrawlerJournalOfManagement" />
-      <option name="METHOD_NAME" value="testFebruary" />
-      <option name="FOLDER_NAME" value="" />
-      <option name="TEST_TYPE" value="TEST_METHOD" />
-      <option name="PATTERN" value="" />
-      <option name="USE_PATTERN" value="false" />
-      <option name="PUREUNITTEST" value="true" />
-      <option name="PARAMS" value="" />
-      <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.Scrape_JournalOfManagement">
     <configuration default="false" name="Unittests in TestCrawlerJournalOfManagement" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -349,6 +305,42 @@
       <option name="PUREUNITTEST" value="true" />
       <option name="PARAMS" value="" />
       <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Scrape_JournalOfManagement" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="WebCrawler_Assessment" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Src/Scrape_JournalOfManagement.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="WebCrawler_Assessment" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Src/Test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
@@ -545,19 +537,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest TestCrawlerJournalOfManagement.testJanuary" />
-      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestCrawlerJournalOfManagement.testFebruary" />
-      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in TestCrawlerJournalOfManagement" />
-      <item index="3" class="java.lang.String" itemvalue="Python.Scrape_AmericanJournalOfSociology" />
-      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in TestCrawlerJournalOfManagement (1)" />
+      <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in TestCrawlerJournalOfManagement" />
+      <item index="1" class="java.lang.String" itemvalue="Python.Scrape_AmericanJournalOfSociology" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in TestCrawlerJournalOfManagement (1)" />
+      <item index="3" class="java.lang.String" itemvalue="Python.Scrape_JournalOfManagement" />
+      <item index="4" class="java.lang.String" itemvalue="Python.Test" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in TestCrawlerJournalOfManagement (1)" />
-        <item index="1" class="java.lang.String" itemvalue="Python.Scrape_AmericanJournalOfSociology" />
-        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in TestCrawlerJournalOfManagement" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestCrawlerJournalOfManagement.testJanuary" />
-        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestCrawlerJournalOfManagement.testFebruary" />
+        <item index="0" class="java.lang.String" itemvalue="Python.Scrape_JournalOfManagement" />
+        <item index="1" class="java.lang.String" itemvalue="Python.Test" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in TestCrawlerJournalOfManagement (1)" />
+        <item index="3" class="java.lang.String" itemvalue="Python.Scrape_AmericanJournalOfSociology" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in TestCrawlerJournalOfManagement" />
       </list>
     </recent_temporary>
   </component>
@@ -618,9 +610,9 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34860885" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22913256" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22913256" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39934534" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29459903" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -643,7 +635,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="9" />
+      <option name="time" value="14" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -722,14 +714,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Src/Test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="22" selection-start-line="0" selection-start-column="22" selection-end-line="0" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.45454547">
@@ -759,6 +743,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33333334">
           <caret line="373" column="0" selection-start-line="373" selection-start-column="0" selection-end-line="373" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -787,16 +772,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Src/Scrape_JournalOfManagement.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="67" column="20" selection-start-line="63" selection-start-column="0" selection-end-line="67" selection-end-column="20" />
-          <folding>
-            <element signature="e#15#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Test/TestAmericanJournalOfSociology.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -809,10 +784,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Src/Scrape_AmericanJournalOfSociology.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6930023">
-          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding>
             <element signature="e#15#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Src/Test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="57" selection-start-line="2" selection-start-column="57" selection-end-line="2" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Src/Scrape_JournalOfManagement.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38765007">
+          <caret line="92" column="9" selection-start-line="92" selection-start-column="9" selection-end-line="92" selection-end-column="9" />
+          <folding>
+            <element signature="e#15#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
