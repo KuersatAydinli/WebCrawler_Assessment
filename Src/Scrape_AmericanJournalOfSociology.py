@@ -33,9 +33,9 @@ class ScrapeJournalOfSociology():
         :param path: PATH for saving document
         """
         # response = self.opener.open(download_url).read()
-        req = urllib2.Request(download_url,
-                              headers={'User-Agent': 'Mozilla/5.0'})
-        response = urllib2.urlopen(req).read()
+        jar = cookielib.FileCookieJar("cookies")
+        opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(jar))
+        response = opener.open(download_url).read()
         file = open(path, 'wb')
         file.write(response)
         file.close()
@@ -77,8 +77,20 @@ print '====================='
 #
 # soup2 = BeautifulSoup(urllib2.urlopen(sample_url).read())
 
-myclass = ScrapeJournalOfSociology()
-# allinks = myclass.get_pdf_links()
+crawlerJournalSoc = ScrapeJournalOfSociology()
+allLinks_JournalOfSociology = crawlerJournalSoc.get_pdf_links()
+for month, links in allLinks_JournalOfSociology.iteritems():
+    if month != 'January':
+        counter = 1
+        for link in links:
+            crawlerJournalSoc.download_file(link,
+                                            "F:/Wifo_5_Semester/CrowdSourcing/WebCrawler_Assessment/Src/American Journal of Sociology/"
+                                            + month + '/Doc' + str(counter) + '.pdf')
+            counter += 1
+        print 'DOWNLOAD COMPLETED FOR ' + str(month).upper()
+# crawlerJournalSoc.download_file('http://www.journals.uchicago.edu/doi/pdfplus/10.1086/675301', 'out.pdf')
+
+# allinks = crawlerJournalSoc.get_pdf_links()
 # print 'allinks'
 # print allinks
 # for month,links in allinks.iteritems():
@@ -86,7 +98,7 @@ myclass = ScrapeJournalOfSociology()
 #     print 'len: ' + str(len(links))
 #     print '======'
 
-# myclass.download_file('http://www.journals.uchicago.edu/doi/pdfplus/10.1086/677061',
+# crawlerJournalSoc.download_file('http://www.journals.uchicago.edu/doi/pdfplus/10.1086/677061',
 #                       'F:/Wifo_5_Semester/CrowdSourcing/WebCrawler_Assessment/Src/American Journal of Sociology/January/Doc1.pdf')
 sample_url = 'http://www.journals.uchicago.edu/doi/pdfplus/10.1086/675301'
 # req = requests.get("http://www.journals.uchicago.edu/doi/pdfplus/10.1086/677061")
@@ -97,10 +109,10 @@ sample_url = 'http://www.journals.uchicago.edu/doi/pdfplus/10.1086/675301'
 
 # pdfkit.from_url('http://www.journals.uchicago.edu/doi/pdfplus/10.1086/677061','out.pdf')
 
-# myclass.download_file("http://www.journals.uchicago.edu/doi/pdfplus/10.1086/675301",
+# crawlerJournalSoc.download_file("http://www.journals.uchicago.edu/doi/pdfplus/10.1086/675301",
 #                       "F:/Wifo_5_Semester/CrowdSourcing/WebCrawler_Assessment/Src/American Journal of Sociology/January/Doc2.txt")
 
-# myclass.get_pdf_links()
+# crawlerJournalSoc.get_pdf_links()
 
 # # Browser
 # br = mechanize.Browser()
@@ -131,23 +143,23 @@ sample_url = 'http://www.journals.uchicago.edu/doi/pdfplus/10.1086/675301'
 print 'retrieved'
 # webbrowser.open('http://www.journals.uchicago.edu/doi/pdfplus/10.1086/677061')
 
-jar = cookielib.FileCookieJar("cookies")
-opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(jar))
-
-print "Currently have %d cookies" % len(jar)
-print "Getting page"
-response = opener.open('http://www.journals.uchicago.edu/doi/pdfplus/10.1086/677061').read()
-print '============================================================RESPONSE'
-file = open('out2.pdf', 'wb')
-file.write(response)
-file.close()
-print '============================================================RESPONSE'
-print '============================================================newlinks'
-#newlinks = lxml.html.fromstring(opener.open(sample_url).read()).xpath('//table//a[contains(@prop,'Foo')])
-newlinks = lxml.html.fromstring(opener.open(sample_url).read()).xpath("//a[contains(@href,'pdfplus')]/@href")
-print newlinks
-print len(newlinks)
-print '============================================================newlinks'
-print "Got page"
-print "Currently have %d cookies" % len(jar)
-print jar
+# jar = cookielib.FileCookieJar("cookies")
+# opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(jar))
+#
+# print "Currently have %d cookies" % len(jar)
+# print "Getting page"
+# response = opener.open('http://www.journals.uchicago.edu/doi/pdfplus/10.1086/677061').read()
+# print '============================================================RESPONSE'
+# file = open('out2.pdf', 'wb')
+# file.write(response)
+# file.close()
+# print '============================================================RESPONSE'
+# print '============================================================newlinks'
+# #newlinks = lxml.html.fromstring(opener.open(sample_url).read()).xpath('//table//a[contains(@prop,'Foo')])
+# newlinks = lxml.html.fromstring(opener.open(sample_url).read()).xpath("//a[contains(@href,'pdfplus')]/@href")
+# print newlinks
+# print len(newlinks)
+# print '============================================================newlinks'
+# print "Got page"
+# print "Currently have %d cookies" % len(jar)
+# print jar
