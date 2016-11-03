@@ -44,6 +44,7 @@ class ScrapeJournalOfSociology():
                     links_per_month[month] = correct_pdf_links
         return links_per_month
 
+
 crawlerJournalSoc = ScrapeJournalOfSociology()
 allLinks_JournalOfSociology = crawlerJournalSoc.get_pdf_links()
 for month, links in allLinks_JournalOfSociology.iteritems():

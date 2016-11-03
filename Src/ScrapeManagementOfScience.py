@@ -38,12 +38,13 @@ class ScrapeMangementOfScience:
     def get_pdf_links(self):
         links_per_month = {}
         for url in self.base_urls.values():
-            hdr = {'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
-                   'User-Agent': 'Mozilla/5.0'}
-            req = urllib2.Request(url, headers=hdr)
-            page = urllib2.urlopen(req)
-            # pdf_links = lxml.html.fromstring(opener.open(url).read()).xpath("//a[contains(@href,'/doi/pdf')]/@href")
-            pdf_links = lxml.html.fromstring(page.read()).xpath("//a[contains(@href,'/doi/pdf')]/@href")
+            # hdr = {'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+            #        'User-Agent': 'Mozilla/5.0'}
+            # req = urllib2.Request(url, headers=hdr)
+            # page = urllib2.urlopen(req)
+            pdf_links = lxml.html.fromstring(self.opener.open(url).read()).xpath(
+                "//a[contains(@href,'/doi/pdf')]/@href")
+            # pdf_links = lxml.html.fromstring(page.read()).xpath("//a[contains(@href,'/doi/pdf')]/@href")
             correct_pdf_links = []
             for pdf_link in pdf_links:
                 link = 'http://pubsonline.informs.org' + pdf_link
@@ -53,6 +54,7 @@ class ScrapeMangementOfScience:
                 if (link == url):
                     links_per_month[month] = correct_pdf_links
         return links_per_month
+
 
 # jar = cookielib.FileCookieJar("cookies")
 # opener = urllib2.build_opener(urllib2.HTTPCookieProcessor(jar))
@@ -65,23 +67,22 @@ crawlerManagementOfScience = ScrapeMangementOfScience()
 allLinks_ManagementOfScience = crawlerManagementOfScience.get_pdf_links()
 
 for month, links in allLinks_ManagementOfScience.iteritems():
-    if month == 'August':
-        counter = 1
-        for link in links:
-            crawlerManagementOfScience.download_file(link,
-                                            "F:/Dropbox/Dropbox/WebCrawler_Assessment/Management of Science/"
-                                            + month + '/Doc' + str(counter) + '.pdf')
-            counter += 1
-        print 'DOWNLOAD COMPLETED FOR ' + str(month).upper()
-        exit()
+    counter = 1
+    for link in links:
+        crawlerManagementOfScience.download_file(link,
+                                                 "F:/Dropbox/Dropbox/WebCrawler_Assessment/Management of Science/"
+                                                 + month + '/Doc' + str(counter) + '.pdf')
+        counter += 1
+    print 'DOWNLOAD COMPLETED FOR ' + str(month).upper()
 
-# site = 'http://pubsonline.informs.org/toc/mnsc/60/8'
-# hdr = {'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'}
-# req = urllib2.Request(site, headers=hdr)
-# try:
-#     page = urllib2.urlopen(req)
-# except urllib2.HTTPError, e:
-#     print e.fp.read()
-#
-# content = page.read()
-# print content
+
+    # site = 'http://pubsonline.informs.org/toc/mnsc/60/8'
+    # hdr = {'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8'}
+    # req = urllib2.Request(site, headers=hdr)
+    # try:
+    #     page = urllib2.urlopen(req)
+    # except urllib2.HTTPError, e:
+    #     print e.fp.read()
+    #
+    # content = page.read()
+    # print content

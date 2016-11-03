@@ -1,6 +1,7 @@
 import unittest
 import os, os.path
 
+# Testclass for testing number of PDFs
 class TestManagementOfScience(unittest.TestCase):
     def testJanuary(self):
         Dir = 'F:/Dropbox/Dropbox/WebCrawler_Assessment/Management of Science/January/'

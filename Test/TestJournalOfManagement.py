@@ -1,6 +1,7 @@
 import unittest
 import os, os.path
 
+
 # Testclass for testing number of PDFs
 class TestCrawlerJournalOfManagement(unittest.TestCase):
     def testJanuary(self):
