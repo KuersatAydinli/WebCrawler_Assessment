@@ -28,6 +28,6 @@
 
 
 # WORKS THE BEST
-# from textract import process
-# text = process('FlashTeams.pdf')
-# print text
+from textract import process
+text = process('F:/Dropbox/Dropbox/WebCrawler_Assessment_PDFs/Management of Science/June/Doc14.pdf')
+print text

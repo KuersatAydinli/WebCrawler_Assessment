@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="076176eb-6392-4c02-b95e-c171b5ab60e2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Src/FlashTeams.pdf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Src/StatPDFPreProcessing.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Src/methodlist_full.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Src/Test.py" afterPath="$PROJECT_DIR$/Src/Test.py" />
     </list>
@@ -22,13 +23,14 @@
     <SUITE FILE_PATH="coverage/WebCrawler_Assessment$Unittests_in_TestCrawlerJournalOfManagement__1_.coverage" NAME="Unittests in TestCrawlerJournalOfManagement (1) Coverage Results" MODIFIED="1478184073068" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test" />
     <SUITE FILE_PATH="coverage/WebCrawler_Assessment$Scrape_JournalOfManagement.coverage" NAME="Scrape_JournalOfManagement Coverage Results" MODIFIED="1478181001076" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Src" />
     <SUITE FILE_PATH="coverage/WebCrawler_Assessment$Scrape_AmericanJournalOfSociology.coverage" NAME="Scrape_AmericanJournalOfSociology Coverage Results" MODIFIED="1478183341900" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Src" />
+    <SUITE FILE_PATH="coverage/WebCrawler_Assessment$StatPDFPreProcessing.coverage" NAME="StatPDFPreProcessing Coverage Results" MODIFIED="1478279470081" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Src" />
     <SUITE FILE_PATH="coverage/WebCrawler_Assessment$Unittest_TestCrawlerJournalOfManagement_testFebruary.coverage" NAME="Unittest TestCrawlerJournalOfManagement.testFebruary Coverage Results" MODIFIED="1478087908602" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test" />
     <SUITE FILE_PATH="coverage/WebCrawler_Assessment$Unittest_TestCrawlerJournalOfManagement_testJanuary.coverage" NAME="Unittest TestCrawlerJournalOfManagement.testJanuary Coverage Results" MODIFIED="1478087924088" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test" />
     <SUITE FILE_PATH="coverage/WebCrawler_Assessment$Unittests_in_TestManagementOfScience.coverage" NAME="Unittests in TestManagementOfScience Coverage Results" MODIFIED="1478187781305" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test" />
     <SUITE FILE_PATH="coverage/WebCrawler_Assessment$Unittest_TestCrawlerJournalOfManagement_testMarch.coverage" NAME="Unittest TestCrawlerJournalOfManagement.testMarch Coverage Results" MODIFIED="1478087886774" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test" />
     <SUITE FILE_PATH="coverage/WebCrawler_Assessment$Crawler.coverage" NAME="Crawler Coverage Results" MODIFIED="1478039585715" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Src" />
     <SUITE FILE_PATH="coverage/WebCrawler_Assessment$ScrapeManagementOfScience.coverage" NAME="ScrapeManagementOfScience Coverage Results" MODIFIED="1478187618266" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Src" />
-    <SUITE FILE_PATH="coverage/WebCrawler_Assessment$Test.coverage" NAME="Test Coverage Results" MODIFIED="1478191873760" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Src" />
+    <SUITE FILE_PATH="coverage/WebCrawler_Assessment$Test.coverage" NAME="Test Coverage Results" MODIFIED="1478206945739" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Src" />
     <SUITE FILE_PATH="coverage/WebCrawler_Assessment$Unittests_in_TestCrawlerJournalOfManagement.coverage" NAME="Unittests in TestCrawlerJournalOfManagement Coverage Results" MODIFIED="1478182192025" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test" />
     <SUITE FILE_PATH="coverage/WebCrawler_Assessment$Unittests_in_Test.coverage" NAME="Unittests in Test Coverage Results" MODIFIED="1478034667494" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test" />
     <SUITE FILE_PATH="coverage/WebCrawler_Assessment$Unittest_TestCrawlerJournalOfManagement_testNovember.coverage" NAME="Unittest TestCrawlerJournalOfManagement.testNovember Coverage Results" MODIFIED="1478182185031" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test" />
@@ -42,11 +44,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Test.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Test.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Src/Test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.72432435">
-              <caret line="29" column="16" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="32" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StatPDFPreProcessing.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Src/StatPDFPreProcessing.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.42902207">
+              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="methodlist_full.csv" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Src/methodlist_full.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="11" column="44" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -58,18 +82,6 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="2" column="53" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="53" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Scrape_JournalOfManagement.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Src/Scrape_JournalOfManagement.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
-              <folding>
-                <element signature="e#15#29#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -92,18 +104,6 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Scrape_AmericanJournalOfSociology.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Src/Scrape_AmericanJournalOfSociology.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-              <folding>
-                <element signature="e#15#31#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -182,6 +182,8 @@
         <option value="$PROJECT_DIR$/Test/TestJournalOfManagement.py" />
         <option value="$PROJECT_DIR$/Test/TestManagementOfScience.py" />
         <option value="$PROJECT_DIR$/Src/Test.py" />
+        <option value="$PROJECT_DIR$/Src/methodlist_full.csv" />
+        <option value="$PROJECT_DIR$/Src/StatPDFPreProcessing.py" />
       </list>
     </option>
   </component>
@@ -195,6 +197,25 @@
     <option name="y" value="-8" />
     <option name="width" value="1382" />
     <option name="height" value="744" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+          <State>
+            <id>Spelling</id>
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>SpellCheckingInspection</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -288,25 +309,7 @@
       <recent name="F:\Wifo_5_Semester\CrowdSourcing\WebCrawler_Assessment\Src" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Test">
-    <configuration default="false" name="Scrape_AmericanJournalOfSociology" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Src" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="WebCrawler_Assessment" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Src/Scrape_AmericanJournalOfSociology.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.StatPDFPreProcessing">
     <configuration default="false" name="ScrapeManagementOfScience" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -385,6 +388,24 @@
       <module name="WebCrawler_Assessment" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Src/Test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="StatPDFPreProcessing" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="WebCrawler_Assessment" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Src/StatPDFPreProcessing.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -583,19 +604,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.Scrape_AmericanJournalOfSociology" />
-      <item index="1" class="java.lang.String" itemvalue="Python.ScrapeManagementOfScience" />
-      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in TestCrawlerJournalOfManagement (1)" />
-      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in TestManagementOfScience" />
-      <item index="4" class="java.lang.String" itemvalue="Python.Test" />
+      <item index="0" class="java.lang.String" itemvalue="Python.ScrapeManagementOfScience" />
+      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in TestCrawlerJournalOfManagement (1)" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in TestManagementOfScience" />
+      <item index="3" class="java.lang.String" itemvalue="Python.Test" />
+      <item index="4" class="java.lang.String" itemvalue="Python.StatPDFPreProcessing" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.Test" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittests in TestManagementOfScience" />
-        <item index="2" class="java.lang.String" itemvalue="Python.ScrapeManagementOfScience" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in TestCrawlerJournalOfManagement (1)" />
-        <item index="4" class="java.lang.String" itemvalue="Python.Scrape_AmericanJournalOfSociology" />
+        <item index="0" class="java.lang.String" itemvalue="Python.StatPDFPreProcessing" />
+        <item index="1" class="java.lang.String" itemvalue="Python.Test" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittests in TestManagementOfScience" />
+        <item index="3" class="java.lang.String" itemvalue="Python.ScrapeManagementOfScience" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittests in TestCrawlerJournalOfManagement (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -654,7 +675,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.34860885" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.43535188" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22913256" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -699,7 +720,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="66" column="105" selection-start-line="66" selection-start-column="42" selection-end-line="66" selection-end-column="105" />
           <folding>
-            <element signature="e#15#29#0" expanded="true" />
+            <element signature="e#15#29#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -709,7 +730,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="56" column="60" selection-start-line="48" selection-start-column="0" selection-end-line="56" selection-end-column="60" />
           <folding>
-            <element signature="e#15#31#0" expanded="true" />
+            <element signature="e#15#31#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -719,7 +740,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#15#31#0" expanded="true" />
+            <element signature="e#15#31#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -785,7 +806,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="24" column="48" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="48" />
           <folding>
-            <element signature="e#15#29#0" expanded="true" />
+            <element signature="e#15#29#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -795,7 +816,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#15#31#0" expanded="true" />
+            <element signature="e#15#31#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -873,7 +894,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="75" column="45" selection-start-line="75" selection-start-column="45" selection-end-line="75" selection-end-column="45" />
           <folding>
-            <element signature="e#15#31#0" expanded="true" />
+            <element signature="e#15#31#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -883,7 +904,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
           <folding>
-            <element signature="e#15#31#0" expanded="true" />
+            <element signature="e#15#31#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -893,7 +914,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="73" column="0" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
           <folding>
-            <element signature="e#15#29#0" expanded="true" />
+            <element signature="e#15#29#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -964,9 +985,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Src/Test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.72432435">
-          <caret line="29" column="16" selection-start-line="29" selection-start-column="16" selection-end-line="29" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="32" selection-end-column="10" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Src/methodlist_full.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="44" selection-start-line="11" selection-start-column="44" selection-end-line="11" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Src/StatPDFPreProcessing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42902207">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
