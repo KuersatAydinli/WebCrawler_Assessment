@@ -34,9 +34,12 @@ class StatPDFPreProcessing:
         for key, values in method_synon_dict.iteritems():
             if len(values) >=1:
                 for value in values:
-                    if value in pdf_text:
+                    if value.lower() in pdf_text.lower():
                         method_bool_mapping[key] = True
-
+            else:
+                if key.lower() in pdf_text.lower():
+                    method_bool_mapping[key] = True
+        return method_bool_mapping
 
     def create_initial_table(self):
         """
@@ -80,6 +83,22 @@ class StatPDFPreProcessing:
 statPreProcessor = StatPDFPreProcessing()
 stat_table = statPreProcessor.create_initial_table()
 method_dict = statPreProcessor.create_stat_method_dict()
+stat_methods = statPreProcessor.get_method_names()
+print stat_methods
+
+# Testing Management of Science statistics
+testDir = 'F:/Dropbox/Dropbox/all papers/Management of Science'
+count = 1
+method_bool_dicts = [{}]
+for month_issue in os.listdir(testDir):
+    for file in os.listdir(testDir+'/'+month_issue):
+        # print (file,count)
+        count += 1
+        method_bool_dict = statPreProcessor.create_method_bool_dict(testDir+"/"+month_issue+"/"+file,stat_methods)
+        print ('Month: ' + month_issue, 'File: ' + file, method_bool_dict)
+        method_bool_dicts.append(method_bool_dict)
+
+print method_bool_dicts
 
 
 # stat_method_dict = {}
