@@ -4,6 +4,14 @@ from textract import process
 from astropy.table import Table, Column
 import numpy as np
 from astropy.io import ascii
+import re
+from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
+from pdfminer.converter import TextConverter
+from pdfminer.layout import LAParams
+from pdfminer.pdfpage import PDFPage
+from cStringIO import StringIO
+import string
+
 
 data_rows = [(1, 2.0, 'x'),
              (4, 5.0, 'y'),
@@ -23,22 +31,30 @@ class StatPDFPreProcessing:
         :param pdf_path: path to paper
         :param methods: list of statistical methods specified in 'methodlist_full.csv'
         """
-        method_synon_dict = self.create_stat_method_dict() # Key: stat. method - Value: acronyms, synonyms
+        method_synon_dict = self.create_stat_method_dict() # Key: stat. method - Value: list of acronyms, synonyms
 
         method_bool_mapping = {}
         for method in methods:
             method_bool_mapping[method] = False # Initialize all values to False for all stat. methods
 
         pdf_text = process(pdf_path, language='eng')
-
+        # print method_synon_dict['t-test'][0][1:]
+        # print method_synon_dict['t-test'][0][1:] in pdf_text
         for key, values in method_synon_dict.iteritems():
             if len(values) >=1:
+                #print 'values: ' + str(values)
                 for value in values:
-                    if value.lower() in pdf_text.lower():
+                    # if value.lower() in pdf_text.lower():
+                    #     method_bool_mapping[key] = True
+                    if pdf_text.lower().find(value.lower()) != -1:
                         method_bool_mapping[key] = True
-            else:
-                if key.lower() in pdf_text.lower():
-                    method_bool_mapping[key] = True
+            if pdf_text.lower().find(key.lower()) != -1:
+                method_bool_mapping[key] = True
+            # else:
+            #     # if key.lower() in pdf_text.lower():
+            #     #     method_bool_mapping[key] = True
+            #     if pdf_text.lower().find(key.lower()) != -1:
+            #         method_bool_mapping[key] = True
         return method_bool_mapping
 
     def create_initial_table(self):
@@ -87,6 +103,7 @@ stat_methods = statPreProcessor.get_method_names()
 print stat_methods
 
 # Testing Management of Science statistics
+
 testDir = 'F:/Dropbox/Dropbox/all papers/Management of Science'
 count = 1
 method_bool_dicts = [{}]
@@ -96,10 +113,17 @@ for month_issue in os.listdir(testDir):
         count += 1
         method_bool_dict = statPreProcessor.create_method_bool_dict(testDir+"/"+month_issue+"/"+file,stat_methods)
         print ('Month: ' + month_issue, 'File: ' + file, method_bool_dict)
+
         method_bool_dicts.append(method_bool_dict)
 
-print method_bool_dicts
+journal_method_dict = {}
 
+testString = 'Mantel – Haenszel'
+print testString.translate(None,string.whitespace)
+
+# text = process('F:/Dropbox/Dropbox/WebCrawler_Assessment_PDFs/Management of Science/June/Doc8.pdf', language='eng')
+# print 't-test' in text
+# print statPreProcessor.create_method_bool_dict('F:/Dropbox/Dropbox/WebCrawler_Assessment_PDFs/Management of Science/June/Doc8.pdf',stat_methods)
 
 # stat_method_dict = {}
 # with open('methodlist_full.csv', 'r') as file:
@@ -130,3 +154,28 @@ print method_bool_dicts
 #         for method in line.split(','):
 #             methods.append(method)
 # print methods
+#
+# def convert_pdf_to_txt(path):
+#     rsrcmgr = PDFResourceManager()
+#     retstr = StringIO()
+#     codec = 'utf-8'
+#     laparams = LAParams()
+#     device = TextConverter(rsrcmgr, retstr, codec=codec, laparams=laparams)
+#     fp = file(path, 'rb')
+#     interpreter = PDFPageInterpreter(rsrcmgr, device)
+#     password = ""
+#     maxpages = 0
+#     caching = True
+#     pagenos=set()
+#
+#     for page in PDFPage.get_pages(fp, pagenos, maxpages=maxpages, password=password,caching=caching, check_extractable=True):
+#         interpreter.process_page(page)
+#
+#     text = retstr.getvalue()
+#
+#     fp.close()
+#     device.close()
+#     retstr.close()
+#     return text
+#
+# print convert_pdf_to_txt('F:/Dropbox/Dropbox/WebCrawler_Assessment_PDFs/Management of Science/June/Doc14.pdf')
