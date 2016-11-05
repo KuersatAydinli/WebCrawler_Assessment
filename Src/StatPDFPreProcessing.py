@@ -12,7 +12,6 @@ from pdfminer.pdfpage import PDFPage
 from cStringIO import StringIO
 import string
 
-
 data_rows = [(1, 2.0, 'x'),
              (4, 5.0, 'y'),
              (5, 8.2, 'z')]
@@ -31,30 +30,22 @@ class StatPDFPreProcessing:
         :param pdf_path: path to paper
         :param methods: list of statistical methods specified in 'methodlist_full.csv'
         """
-        method_synon_dict = self.create_stat_method_dict() # Key: stat. method - Value: list of acronyms, synonyms
+        method_synon_dict = self.create_stat_method_dict()  # Key: stat. method - Value: list of acronyms, synonyms
 
         method_bool_mapping = {}
         for method in methods:
-            method_bool_mapping[method] = False # Initialize all values to False for all stat. methods
+            method_bool_mapping[method] = False  # Initialize all values to False for all stat. methods
 
         pdf_text = process(pdf_path, language='eng')
-        # print method_synon_dict['t-test'][0][1:]
-        # print method_synon_dict['t-test'][0][1:] in pdf_text
         for key, values in method_synon_dict.iteritems():
-            if len(values) >=1:
-                #print 'values: ' + str(values)
+            if len(values) >= 1:
                 for value in values:
-                    # if value.lower() in pdf_text.lower():
-                    #     method_bool_mapping[key] = True
-                    if pdf_text.lower().find(value.lower()) != -1:
+                    if pdf_text.lower().translate(None, string.punctuation).find(
+                            value[1:].lower().translate(None, string.punctuation)) != -1:
                         method_bool_mapping[key] = True
-            if pdf_text.lower().find(key.lower()) != -1:
+            if pdf_text.lower().translate(None, string.punctuation).find(
+                    key.lower().translate(None, string.punctuation)) != -1:
                 method_bool_mapping[key] = True
-            # else:
-            #     # if key.lower() in pdf_text.lower():
-            #     #     method_bool_mapping[key] = True
-            #     if pdf_text.lower().find(key.lower()) != -1:
-            #         method_bool_mapping[key] = True
         return method_bool_mapping
 
     def create_initial_table(self):
@@ -65,14 +56,15 @@ class StatPDFPreProcessing:
         table = Table()
         method_column = Column(name='stat. Methods', data=method_names)
         table.add_column(method_column)
-        journal_names = os.listdir(self.rootdir)
-        journal_columns = []
-        strs = ["" for x in range(31)] # empty string as default entry for table cell
-        for journal in journal_names:
-            journal_column = Column(name=journal, data=strs)
-            journal_columns.append(journal_column)
-        table.add_columns(journal_columns)
-        #print ascii.write(table, format='fixed_width')
+        # journal_names = os.listdir(self.rootdir)
+        # journal_columns = []
+        # strs = ["" for x in range(31)] # empty string as default entry for table cell
+        # for journal in journal_names:
+        #     journal_column = Column(name=journal, data=strs)
+        #     journal_columns.append(journal_column)
+        # table.add_columns(journal_columns)
+        # print ascii.write(table, format='fixed_width')
+        return table
 
     def get_method_names(self):
         """
@@ -95,7 +87,6 @@ class StatPDFPreProcessing:
         return stat_method_dict
 
 
-
 statPreProcessor = StatPDFPreProcessing()
 stat_table = statPreProcessor.create_initial_table()
 method_dict = statPreProcessor.create_stat_method_dict()
@@ -107,20 +98,29 @@ print stat_methods
 testDir = 'F:/Dropbox/Dropbox/all papers/Management of Science'
 count = 1
 method_bool_dicts = [{}]
+method_count_dict = {}  # count in how many papers a stat. method appears: Key: method - Value: #Papers
+for method in stat_methods:
+    method_count_dict[method] = 0
+
 for month_issue in os.listdir(testDir):
-    for file in os.listdir(testDir+'/'+month_issue):
+    for file in os.listdir(testDir + '/' + month_issue):
         # print (file,count)
         count += 1
-        method_bool_dict = statPreProcessor.create_method_bool_dict(testDir+"/"+month_issue+"/"+file,stat_methods)
+        method_bool_dict = statPreProcessor.create_method_bool_dict(testDir + "/" + month_issue + "/" + file,
+                                                                    stat_methods)
+        for method, occ in method_bool_dict.iteritems():
+            if occ == True:
+                method_count_dict[method] += 1
         print ('Month: ' + month_issue, 'File: ' + file, method_bool_dict)
 
-        method_bool_dicts.append(method_bool_dict)
-
-journal_method_dict = {}
-
+print method_count_dict
 testString = 'Mantel – Haenszel'
-print testString.translate(None,string.whitespace)
+print testString.translate(None, string.whitespace)
 
+method_occurences = list(method_count_dict.values())
+stat_column = Column(name='Management of Science', data=method_occurences)
+stat_table.add_column(stat_column)
+print ascii.write(stat_table, format='fixed_width')
 # text = process('F:/Dropbox/Dropbox/WebCrawler_Assessment_PDFs/Management of Science/June/Doc8.pdf', language='eng')
 # print 't-test' in text
 # print statPreProcessor.create_method_bool_dict('F:/Dropbox/Dropbox/WebCrawler_Assessment_PDFs/Management of Science/June/Doc8.pdf',stat_methods)
