@@ -3,6 +3,7 @@ import os
 from textract import process
 from astropy.table import Table, Column
 import numpy as np
+from astropy.io import ascii
 
 data_rows = [(1, 2.0, 'x'),
              (4, 5.0, 'y'),
@@ -28,8 +29,25 @@ class StatPDFPreProcessing:
         text = process(pdf_path, language='eng')
 
     def create_initial_table(self):
-        t = Table(names=('statistical Method',os.listdir(self.rootdir)))
-        print t
+        method_names = []
+        with open(self.stat_method,'r') as method_file:
+            for line in method_file.readlines():
+                method_names.append(line.split(',')[0])
+        # table = Table(data=method_names,names=('stat. Methods'))
+        table = Table()
+        method_column = Column(name='stat. Methods', data=method_names)
+        table.add_column(method_column)
+        journal_names = os.listdir(self.rootdir)
+        journal_columns = []
+        strs = ["" for x in range(31)]
+        for journal in journal_names:
+            journal_column = Column(name=journal, data=strs)
+            journal_columns.append(journal_column)
+        table.add_columns(journal_columns)
+        # t = Table(names=('statistical Method',os.listdir(self.rootdir)))
+        # with open('final_analysis.txt', 'w') as final_analysis:
+        #     final_analysis.write(ascii.write(table))
+        print ascii.write(table)
 
     def create_stat_method_dict(self):
         with open(self.stat_method, 'r') as file:
@@ -37,8 +55,8 @@ class StatPDFPreProcessing:
                 self.stat_method_dict[line.split(',')[0]] = line.split(',')[1:]
 
 
-# statPreProcessor = StatPDFPreProcessing()
-# stat_table = statPreProcessor.create_initial_table()
+statPreProcessor = StatPDFPreProcessing()
+stat_table = statPreProcessor.create_initial_table()
 # stat_method_dict = statPreProcessor.create_stat_method_dict()
 
 
