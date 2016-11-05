@@ -11,6 +11,7 @@ from pdfminer.layout import LAParams
 from pdfminer.pdfpage import PDFPage
 from cStringIO import StringIO
 import string
+import tables
 
 data_rows = [(1, 2.0, 'x'),
              (4, 5.0, 'y'),
@@ -41,7 +42,7 @@ class StatPDFPreProcessing:
             if len(values) >= 1:
                 for value in values:
                     if pdf_text.lower().translate(None, string.punctuation).find(
-                            value[1:].lower().translate(None, string.punctuation)) != -1:
+                            value.lower().translate(None, string.punctuation)) != -1:
                         method_bool_mapping[key] = True
             if pdf_text.lower().translate(None, string.punctuation).find(
                     key.lower().translate(None, string.punctuation)) != -1:
@@ -111,15 +112,22 @@ for month_issue in os.listdir(testDir):
         for method, occ in method_bool_dict.iteritems():
             if occ == True:
                 method_count_dict[method] += 1
-        print ('Month: ' + month_issue, 'File: ' + file, method_bool_dict)
+        # print ('Month: ' + month_issue, 'File: ' + file, method_bool_dict)
 
 print method_count_dict
 testString = 'Mantel – Haenszel'
 print testString.translate(None, string.whitespace)
 
-method_occurences = list(method_count_dict.values())
-stat_column = Column(name='Management of Science', data=method_occurences)
+method_occurences = {}
+# for method, count in method_count_dict.iteritems():
+#     for method2 in stat_methods:
+#         if method == method2:
+#             method_occurences.append(count)
+for method in stat_methods:
+    method_occurences[method] = method_count_dict[method]
+stat_column = Column(name='Management of Science', data=list(method_occurences.values()))
 stat_table.add_column(stat_column)
+
 print ascii.write(stat_table, format='fixed_width')
 # text = process('F:/Dropbox/Dropbox/WebCrawler_Assessment_PDFs/Management of Science/June/Doc8.pdf', language='eng')
 # print 't-test' in text
