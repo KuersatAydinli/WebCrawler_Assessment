@@ -1,0 +1,5 @@
+
+# Hierzu muessten wir für jedes Journal wissen, welche statistische Methode in wie vielen Papers vorkommt.
+# Falls eine Methode mehrmals im gleichen Paper vorkommt, wir sie trotzdem nur einmal gezaehlt. Beispiel: t-test kommt in Management Science in 23% der Paper vor.
+# Um die Prozentzahl zu kriegen musst du zuerst den Text vom PDF extrahieren, und dann mit regex nach den besagten stat.
+# Methoden suchen. Da bei PDF’s haeufig die Leerzeichen etwas fehlerhaft extrahiert werden brauchst du wahrscheinlich regular expressions.
