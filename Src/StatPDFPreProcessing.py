@@ -1,19 +1,26 @@
 # -*- coding: utf-8 -*-
 import os
+
+import PyPDF2
 from textract import process
 from astropy.table import Table, Column
 import numpy as np
 from astropy.io import ascii
 import re
+import json
+import pickle
 from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
 from pdfminer.converter import TextConverter
 from pdfminer.layout import LAParams
 from pdfminer.pdfpage import PDFPage
 from cStringIO import StringIO
+from tika import parser
 import string
 import tables
 from operator import add
 import time
+import pyPdf
+
 
 data_rows = [(1, 2.0, 'x'),
              (4, 5.0, 'y'),
@@ -39,7 +46,10 @@ class StatPDFPreProcessing:
         for method in methods:
             method_bool_mapping[method] = False  # Initialize all values to False for all stat. methods
 
-        pdf_text = process(pdf_path, language='eng')
+        try:
+            pdf_text = process(pdf_path, language='eng')
+        except:
+            pdf_text = ''
 
         for key, values in method_synon_dict.iteritems():
             regex_list = []
@@ -116,49 +126,73 @@ print 'test string\n'.rstrip()
 
 # Testing Management of Science statistics
 
-testDir = 'F:/Dropbox/Dropbox/all papers/Management of Science'
-main_dir = 'F:/Dropbox/Dropbox/all papers'
+# testDir = 'F:/Dropbox/Dropbox/all papers/Management of Science'
+# main_dir = 'F:/Dropbox/Dropbox/all papers'
+#
+# counter = 1
+#
+# journal_counts = {}
+# for journal in os.listdir(main_dir):
+#     journal_counts[journal] = sum([len(files) for r, d, files in os.walk(main_dir + "/" + journal)])
+# print journal_counts
+#
+# for journalDirectory in os.listdir(main_dir):
+#     method_count_dict = {}  # count in how many papers a stat. method appears: Key: method - Value: #Papers
+#     method_percent_dict = {}  # same as method_count_dict - only with percentage values
+#     for method in stat_methods:
+#         method_count_dict[method.rstrip().replace("\xe2\x80\x93", "-")] = 0
+#
+#     for month_issue in os.listdir(main_dir + "/" + journalDirectory):
+#         for file in os.listdir(main_dir + "/" + journalDirectory + '/' + month_issue):
+#             # print (file,count)
+#             method_bool_dict = statPreProcessor.create_method_bool_dict(
+#                 main_dir + "/" + journalDirectory + "/" + month_issue + "/" + file,
+#                 stat_methods)
+#             print (journalDirectory, month_issue, file, counter)
+#             for method, occ in method_bool_dict.iteritems():
+#                 if occ == True:
+#                     method_count_dict[method.rstrip().replace("\xe2\x80\x93", "-")] += 1
+#             counter += 1
+#     # numpy_file = open('method_count_dict.npy', 'a')
+#     # try:
+#     #     np.savetxt(numpy_file, method_count_dict)
+#     # except:
+#     #     pass
+#     pickle_file = open('method_count_dict.pkl', 'a')
+#     try:
+#         pickle.dump(pickle_file,method_count_dict)
+#     except:
+#         pass
+#     json_file = open('method_count_dict.txt', 'a')
+#     try:
+#         json.dump(method_count_dict,json_file)
+#     except:
+#         pass
+#
+#     # store percentage values in dict
+#     # for method_count, count in method_count_dict.iteritems():
+#     #     method_percent_dict[method_count.rstrip().replace("\xe2\x80\x93", "-")] = float(count) / float(
+#     #         journal_counts[method_count.rstrip().replace("\xe2\x80\x93", "-")])
+#     # print method_count_dict
+#     print 'JOURNAL COMPLETED ' + str(journalDirectory)
+#     print (str(journalDirectory), method_count_dict)
+# # print np.load('method_count_dict.npy')
 
-counter = 1
-
-journal_counts = {}
-for journal in os.listdir(main_dir):
-    journal_counts[journal] = sum([len(files) for r, d, files in os.walk(main_dir + "/" + journal)])
-print journal_counts
-
-for journalDirectory in os.listdir(main_dir):
-    method_count_dict = {}  # count in how many papers a stat. method appears: Key: method - Value: #Papers
-    method_percent_dict = {}  # same as method_count_dict - only with percentage values
-    for method in stat_methods:
-        method_count_dict[method.rstrip().replace("\xe2\x80\x93", "-")] = 0
-
-    for month_issue in os.listdir(main_dir + "/" + journalDirectory):
-        for file in os.listdir(main_dir + "/" + journalDirectory + '/' + month_issue):
-            # print (file,count)
-            method_bool_dict = statPreProcessor.create_method_bool_dict(
-                main_dir + "/" + journalDirectory + "/" + month_issue + "/" + file,
-                stat_methods)
-            print (journalDirectory, month_issue, counter)
-            for method, occ in method_bool_dict.iteritems():
-                if occ == True:
-                    method_count_dict[method.rstrip().replace("\xe2\x80\x93", "-")] += 1
-            counter += 1
-    np.save('method_count_dict.npy', method_count_dict)
-
-    # store percentage values in dict
-    # for method_count, count in method_count_dict.iteritems():
-    #     method_percent_dict[method_count.rstrip().replace("\xe2\x80\x93", "-")] = float(count) / float(
-    #         journal_counts[method_count.rstrip().replace("\xe2\x80\x93", "-")])
-    # print method_count_dict
-    print 'JOURNAL COMPLETED ' + str(journalDirectory)
-# print np.load('method_count_dict.npy')
+#print process(pdf_path, language='eng')
+# testDir = 'F:/Dropbox/Dropbox/all papers/chi_1col/CHI-2010/p619-takeuchi.pdf'
+# try:
+#     pdf_text = process(testDir, encoding='utf-8')
+# except:
+#     pdf_text = ''
+# print pdf_text
+# for file in os.listdir(testDir):
+#     print file
+#     process(testDir+"/"+file)
+json_file = open('method_count_dict.txt', 'r')
+mydict = json_file.readline()
+print mydict
 print("--- %s seconds ---" % (time.time() - start_time))
 
-
-# testString = 'Mantel – Haenszel'
-# print testString.translate(None, string.whitespace)
-
-#
 # method_occurences = {}
 # # for method, count in method_count_dict.iteritems():
 # #     for method2 in stat_methods:
