@@ -1,7 +1,10 @@
 # -*- coding: utf-8 -*-
+from __future__ import division
 import os
 
 import PyPDF2
+import ast
+
 from textract import process
 from astropy.table import Table, Column
 import numpy as np
@@ -127,7 +130,7 @@ print 'test string\n'.rstrip()
 # Testing Management of Science statistics
 
 # testDir = 'F:/Dropbox/Dropbox/all papers/Management of Science'
-# main_dir = 'F:/Dropbox/Dropbox/all papers'
+main_dir = 'F:/Dropbox/Dropbox/all papers'
 #
 # counter = 1
 #
@@ -188,9 +191,21 @@ print 'test string\n'.rstrip()
 # for file in os.listdir(testDir):
 #     print file
 #     process(testDir+"/"+file)
-json_file = open('method_count_dict.txt', 'r')
-mydict = json_file.readline()
-print mydict
+
+journal_counts = {}
+for journal in os.listdir(main_dir):
+    journal_counts[journal] = sum([len(files) for r, d, files in os.walk(main_dir + "/" + journal)])
+print journal_counts
+
+
+with open('final_analysis.txt', 'r') as final_analysis:
+    for line in final_analysis.readlines():
+        for jour in journal_counts.keys():
+            if jour in line:
+                dict_journ = ast.literal_eval(line[len(jour)+5:][:-2])
+                for key, value in dict_journ.iteritems():
+                    dict_journ[key] = value/journal_counts[jour]
+                print (jour,dict_journ)
 print("--- %s seconds ---" % (time.time() - start_time))
 
 # method_occurences = {}
