@@ -1,35 +1,14 @@
 # -*- coding: utf-8 -*-
 from __future__ import division
-import os
 
-import PyPDF2
 import ast
-
-from textract import process
-from astropy.table import Table, Column
-import numpy as np
-from astropy.io import ascii
-import re
-import json
-import pickle
-from pdfminer.pdfinterp import PDFResourceManager, PDFPageInterpreter
-from pdfminer.converter import TextConverter
-from pdfminer.layout import LAParams
-from pdfminer.pdfpage import PDFPage
-from cStringIO import StringIO
-from tika import parser
+import os
 import string
-import tables
-from operator import add
 import time
-import pyPdf
 
-
-data_rows = [(1, 2.0, 'x'),
-             (4, 5.0, 'y'),
-             (5, 8.2, 'z')]
-t = Table(rows=data_rows, names=('a', 'b', 'c'))
-print(t)
+from astropy.io import ascii
+from astropy.table import Table, Column
+from textract import process
 
 
 class StatPDFPreProcessing:
@@ -39,7 +18,7 @@ class StatPDFPreProcessing:
     def create_method_bool_dict(self, pdf_path, methods):
         """
 
-        :rtype: dict : dictionary with statistical method as key and boolean for occuring in paper as value
+        :rtype: dict per paper: dictionary with statistical method as key and boolean for occurence in paper as value
         :param pdf_path: path to paper
         :param methods: list of statistical methods specified in 'methodlist_full.csv'
         """
@@ -55,6 +34,7 @@ class StatPDFPreProcessing:
             pdf_text = ''
 
         for key, values in method_synon_dict.iteritems():
+            # list of all possible permutation per string to be checked if it is existent in paper
             regex_list = []
             for value in values:
                 regex_list.append(value.rstrip().replace("\xe2\x80\x93", "-"))
@@ -64,15 +44,6 @@ class StatPDFPreProcessing:
                     if pdf_text.lower().translate(None, string.punctuation).rstrip().replace("\xe2\x80\x93", "-").find(
                             regex.lower().translate(None, string.punctuation)) != -1:
                         method_bool_mapping[key] = True
-                        # if len(values) >= 1:
-                        #     for value in values:
-                        #         if value != '\\n':
-                        #             if pdf_text.lower().translate(None, string.punctuation).find(
-                        #                     value.lower().translate(None, string.punctuation)) != -1:
-                        #                 method_bool_mapping[key] = True
-                        # if pdf_text.lower().translate(None, string.punctuation).find(
-                        #         key.lower().translate(None, string.punctuation)) != -1:
-                        #     method_bool_mapping[key] = True
         return method_bool_mapping
 
     def create_initial_table(self):
@@ -83,14 +54,6 @@ class StatPDFPreProcessing:
         table = Table()
         method_column = Column(name='stat. Methods', data=method_names)
         table.add_column(method_column)
-        # journal_names = os.listdir(self.rootdir)
-        # journal_columns = []
-        # strs = ["" for x in range(31)] # empty string as default entry for table cell
-        # for journal in journal_names:
-        #     journal_column = Column(name=journal, data=strs)
-        #     journal_columns.append(journal_column)
-        # table.add_columns(journal_columns)
-        # print ascii.write(table, format='fixed_width')
         return table
 
     def get_method_names(self):
@@ -115,17 +78,11 @@ class StatPDFPreProcessing:
 
 
 start_time = time.time()
-#
+
 statPreProcessor = StatPDFPreProcessing()
 stat_table = statPreProcessor.create_initial_table()
 method_dict = statPreProcessor.create_stat_method_dict()
 stat_methods = statPreProcessor.get_method_names()
-print stat_methods
-cleaned = []
-for method in stat_methods:
-    cleaned.append(method.rstrip().replace("\xe2\x80\x93", "-"))
-print len(cleaned)
-print 'test string\n'.rstrip()
 
 
 # ======================================= START: Process Statistical Analysis on all Papers ===============================================
@@ -157,11 +114,6 @@ print 'test string\n'.rstrip()
 #                 if occ == True:
 #                     method_count_dict[method.rstrip().replace("\xe2\x80\x93", "-")] += 1
 #             counter += 1
-#     # numpy_file = open('method_count_dict.npy', 'a')
-#     # try:
-#     #     np.savetxt(numpy_file, method_count_dict)
-#     # except:
-#     #     pass
 #     pickle_file = open('method_count_dict.pkl', 'a')
 #     try:
 #         pickle.dump(pickle_file,method_count_dict)
@@ -172,12 +124,6 @@ print 'test string\n'.rstrip()
 #         json.dump(method_count_dict,json_file)
 #     except:
 #         pass
-#
-#     # store percentage values in dict
-#     # for method_count, count in method_count_dict.iteritems():
-#     #     method_percent_dict[method_count.rstrip().replace("\xe2\x80\x93", "-")] = float(count) / float(
-#     #         journal_counts[method_count.rstrip().replace("\xe2\x80\x93", "-")])
-#     # print method_count_dict
 #     print 'JOURNAL COMPLETED ' + str(journalDirectory)
 #     print (str(journalDirectory), method_count_dict)
 # ======================================= END: Process Statistical Analysis on all Papers ===============================================
