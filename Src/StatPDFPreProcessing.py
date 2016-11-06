@@ -12,6 +12,8 @@ from pdfminer.pdfpage import PDFPage
 from cStringIO import StringIO
 import string
 import tables
+from operator import add
+import time
 
 data_rows = [(1, 2.0, 'x'),
              (4, 5.0, 'y'),
@@ -27,7 +29,7 @@ class StatPDFPreProcessing:
     def create_method_bool_dict(self, pdf_path, methods):
         """
 
-        :rtype: dict : dictionnaire with statistical method as key and boolean for occuring in paper as value
+        :rtype: dict : dictionary with statistical method as key and boolean for occuring in paper as value
         :param pdf_path: path to paper
         :param methods: list of statistical methods specified in 'methodlist_full.csv'
         """
@@ -38,15 +40,26 @@ class StatPDFPreProcessing:
             method_bool_mapping[method] = False  # Initialize all values to False for all stat. methods
 
         pdf_text = process(pdf_path, language='eng')
+
         for key, values in method_synon_dict.iteritems():
-            if len(values) >= 1:
-                for value in values:
-                    if pdf_text.lower().translate(None, string.punctuation).find(
-                            value.lower().translate(None, string.punctuation)) != -1:
+            regex_list = []
+            for value in values:
+                regex_list.append(value.rstrip().replace("\xe2\x80\x93", "-"))
+            regex_list.append(key.rstrip().replace("\xe2\x80\x93", "-"))
+            for i, regex in enumerate(regex_list):
+                if regex != "" and regex.lower() != "CI".lower():
+                    if pdf_text.lower().translate(None, string.punctuation).rstrip().replace("\xe2\x80\x93", "-").find(
+                            regex.lower().translate(None, string.punctuation)) != -1:
                         method_bool_mapping[key] = True
-            if pdf_text.lower().translate(None, string.punctuation).find(
-                    key.lower().translate(None, string.punctuation)) != -1:
-                method_bool_mapping[key] = True
+                        # if len(values) >= 1:
+                        #     for value in values:
+                        #         if value != '\\n':
+                        #             if pdf_text.lower().translate(None, string.punctuation).find(
+                        #                     value.lower().translate(None, string.punctuation)) != -1:
+                        #                 method_bool_mapping[key] = True
+                        # if pdf_text.lower().translate(None, string.punctuation).find(
+                        #         key.lower().translate(None, string.punctuation)) != -1:
+                        #     method_bool_mapping[key] = True
         return method_bool_mapping
 
     def create_initial_table(self):
@@ -88,47 +101,77 @@ class StatPDFPreProcessing:
         return stat_method_dict
 
 
+start_time = time.time()
+#
 statPreProcessor = StatPDFPreProcessing()
 stat_table = statPreProcessor.create_initial_table()
 method_dict = statPreProcessor.create_stat_method_dict()
 stat_methods = statPreProcessor.get_method_names()
 print stat_methods
+cleaned = []
+for method in stat_methods:
+    cleaned.append(method.rstrip().replace("\xe2\x80\x93", "-"))
+print len(cleaned)
+print 'test string\n'.rstrip()
 
 # Testing Management of Science statistics
 
 testDir = 'F:/Dropbox/Dropbox/all papers/Management of Science'
-count = 1
-method_bool_dicts = [{}]
-method_count_dict = {}  # count in how many papers a stat. method appears: Key: method - Value: #Papers
-for method in stat_methods:
-    method_count_dict[method] = 0
+main_dir = 'F:/Dropbox/Dropbox/all papers'
 
-for month_issue in os.listdir(testDir):
-    for file in os.listdir(testDir + '/' + month_issue):
-        # print (file,count)
-        count += 1
-        method_bool_dict = statPreProcessor.create_method_bool_dict(testDir + "/" + month_issue + "/" + file,
-                                                                    stat_methods)
-        for method, occ in method_bool_dict.iteritems():
-            if occ == True:
-                method_count_dict[method] += 1
-        # print ('Month: ' + month_issue, 'File: ' + file, method_bool_dict)
+counter = 1
 
-print method_count_dict
-testString = 'Mantel – Haenszel'
-print testString.translate(None, string.whitespace)
+journal_counts = {}
+for journal in os.listdir(main_dir):
+    journal_counts[journal] = sum([len(files) for r, d, files in os.walk(main_dir + "/" + journal)])
+print journal_counts
 
-method_occurences = {}
-# for method, count in method_count_dict.iteritems():
-#     for method2 in stat_methods:
-#         if method == method2:
-#             method_occurences.append(count)
-for method in stat_methods:
-    method_occurences[method] = method_count_dict[method]
-stat_column = Column(name='Management of Science', data=list(method_occurences.values()))
-stat_table.add_column(stat_column)
+for journalDirectory in os.listdir(main_dir):
+    method_count_dict = {}  # count in how many papers a stat. method appears: Key: method - Value: #Papers
+    method_percent_dict = {}  # same as method_count_dict - only with percentage values
+    for method in stat_methods:
+        method_count_dict[method.rstrip().replace("\xe2\x80\x93", "-")] = 0
 
-print ascii.write(stat_table, format='fixed_width')
+    for month_issue in os.listdir(main_dir + "/" + journalDirectory):
+        for file in os.listdir(main_dir + "/" + journalDirectory + '/' + month_issue):
+            # print (file,count)
+            method_bool_dict = statPreProcessor.create_method_bool_dict(
+                main_dir + "/" + journalDirectory + "/" + month_issue + "/" + file,
+                stat_methods)
+            print (journalDirectory, month_issue, counter)
+            for method, occ in method_bool_dict.iteritems():
+                if occ == True:
+                    method_count_dict[method.rstrip().replace("\xe2\x80\x93", "-")] += 1
+            counter += 1
+    np.save('method_count_dict.npy', method_count_dict)
+
+    # store percentage values in dict
+    # for method_count, count in method_count_dict.iteritems():
+    #     method_percent_dict[method_count.rstrip().replace("\xe2\x80\x93", "-")] = float(count) / float(
+    #         journal_counts[method_count.rstrip().replace("\xe2\x80\x93", "-")])
+    # print method_count_dict
+    print 'JOURNAL COMPLETED ' + str(journalDirectory)
+# print np.load('method_count_dict.npy')
+print("--- %s seconds ---" % (time.time() - start_time))
+
+
+# testString = 'Mantel – Haenszel'
+# print testString.translate(None, string.whitespace)
+
+#
+# method_occurences = {}
+# # for method, count in method_count_dict.iteritems():
+# #     for method2 in stat_methods:
+# #         if method == method2:
+# #             method_occurences.append(count)
+# for method in stat_methods:
+#     method_occurences[method] = method_count_dict[method]
+# stat_column = Column(name='Management of Science', data=list(method_occurences.values()))
+# stat_table.add_column(stat_column)
+#
+# print ascii.write(stat_table, format='fixed_width')
+
+
 # text = process('F:/Dropbox/Dropbox/WebCrawler_Assessment_PDFs/Management of Science/June/Doc8.pdf', language='eng')
 # print 't-test' in text
 # print statPreProcessor.create_method_bool_dict('F:/Dropbox/Dropbox/WebCrawler_Assessment_PDFs/Management of Science/June/Doc8.pdf',stat_methods)
