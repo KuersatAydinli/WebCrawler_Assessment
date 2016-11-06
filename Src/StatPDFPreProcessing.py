@@ -196,8 +196,9 @@ journal_counts = {}
 for journal in os.listdir(main_dir):
     journal_counts[journal] = sum([len(files) for r, d, files in os.walk(main_dir + "/" + journal)])
 print journal_counts
-
-
+final_table = Table()
+final_columns = []
+stat_keys = []
 with open('final_analysis.txt', 'r') as final_analysis:
     for line in final_analysis.readlines():
         for jour in journal_counts.keys():
@@ -206,8 +207,17 @@ with open('final_analysis.txt', 'r') as final_analysis:
                 for key, value in dict_journ.iteritems():
                     dict_journ[key] = value/journal_counts[jour]
                 print (jour,dict_journ)
+                stat_keys = dict_journ.keys()
+                distri_column = Column(name=jour, data=list(dict_journ.values()))
+                final_columns.append(distri_column)
 print("--- %s seconds ---" % (time.time() - start_time))
-
+stat_column = Column(name='stat. Methods', data=stat_keys)
+final_table.add_column(stat_column)
+final_table.add_columns(final_columns)
+print ascii.write(final_table, format='fixed_width')
+ascii.write(final_table, 'final_distribution.dat', format='fixed_width')
+# with open('final_distribution_percentage.txt', 'w+') as final_distribution:
+#     final_distribution.write(ascii.write(final_table, format='fixed_width'))
 # method_occurences = {}
 # # for method, count in method_count_dict.iteritems():
 # #     for method2 in stat_methods:
