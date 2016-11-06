@@ -127,10 +127,11 @@ for method in stat_methods:
 print len(cleaned)
 print 'test string\n'.rstrip()
 
-# Testing Management of Science statistics
+
+# ======================================= START: Process Statistical Analysis on all Papers ===============================================
 
 # testDir = 'F:/Dropbox/Dropbox/all papers/Management of Science'
-main_dir = 'F:/Dropbox/Dropbox/all papers'
+# main_dir = 'F:/Dropbox/Dropbox/all papers'
 #
 # counter = 1
 #
@@ -179,19 +180,11 @@ main_dir = 'F:/Dropbox/Dropbox/all papers'
 #     # print method_count_dict
 #     print 'JOURNAL COMPLETED ' + str(journalDirectory)
 #     print (str(journalDirectory), method_count_dict)
-# # print np.load('method_count_dict.npy')
+# ======================================= END: Process Statistical Analysis on all Papers ===============================================
 
-#print process(pdf_path, language='eng')
-# testDir = 'F:/Dropbox/Dropbox/all papers/chi_1col/CHI-2010/p619-takeuchi.pdf'
-# try:
-#     pdf_text = process(testDir, encoding='utf-8')
-# except:
-#     pdf_text = ''
-# print pdf_text
-# for file in os.listdir(testDir):
-#     print file
-#     process(testDir+"/"+file)
 
+# ======================================= START: Generate percentage distribution for all journals ======================================
+main_dir = 'F:/Dropbox/Dropbox/all papers'
 journal_counts = {}
 for journal in os.listdir(main_dir):
     journal_counts[journal] = sum([len(files) for r, d, files in os.walk(main_dir + "/" + journal)])
@@ -216,76 +209,4 @@ final_table.add_column(stat_column)
 final_table.add_columns(final_columns)
 print ascii.write(final_table, format='fixed_width')
 ascii.write(final_table, 'final_distribution.dat', format='fixed_width')
-# with open('final_distribution_percentage.txt', 'w+') as final_distribution:
-#     final_distribution.write(ascii.write(final_table, format='fixed_width'))
-# method_occurences = {}
-# # for method, count in method_count_dict.iteritems():
-# #     for method2 in stat_methods:
-# #         if method == method2:
-# #             method_occurences.append(count)
-# for method in stat_methods:
-#     method_occurences[method] = method_count_dict[method]
-# stat_column = Column(name='Management of Science', data=list(method_occurences.values()))
-# stat_table.add_column(stat_column)
-#
-# print ascii.write(stat_table, format='fixed_width')
-
-
-# text = process('F:/Dropbox/Dropbox/WebCrawler_Assessment_PDFs/Management of Science/June/Doc8.pdf', language='eng')
-# print 't-test' in text
-# print statPreProcessor.create_method_bool_dict('F:/Dropbox/Dropbox/WebCrawler_Assessment_PDFs/Management of Science/June/Doc8.pdf',stat_methods)
-
-# stat_method_dict = {}
-# with open('methodlist_full.csv', 'r') as file:
-#     for line in file.readlines():
-#         stat_method_dict[line.split(',')[0]] = line.split(',')[1:]
-#     print stat_method_dict
-
-# #rootdir = 'F:/Dropbox/Dropbox/WebCrawler_Assessment_PDFs'
-
-# print os.listdir(rootdir)
-#
-# Add the three Journals also to all papers directory
-# rootdir = 'F:/Dropbox/Dropbox/all papers'
-# count = 1
-# for subdir, dirs, files in os.walk(rootdir):
-#     for file in files:
-#         print (os.path.join(subdir, file),count)
-#         count+=1
-
-# WORKS THE BEST
-# from textract import process
-# text = process('F:/Dropbox/Dropbox/WebCrawler_Assessment_PDFs/Management of Science/June/Doc14.pdf', language='eng')
-# print '' in text
-
-# with open('methodlist_full.csv', 'r') as file:
-#     methods = []
-#     for line in file.readlines():
-#         for method in line.split(','):
-#             methods.append(method)
-# print methods
-#
-# def convert_pdf_to_txt(path):
-#     rsrcmgr = PDFResourceManager()
-#     retstr = StringIO()
-#     codec = 'utf-8'
-#     laparams = LAParams()
-#     device = TextConverter(rsrcmgr, retstr, codec=codec, laparams=laparams)
-#     fp = file(path, 'rb')
-#     interpreter = PDFPageInterpreter(rsrcmgr, device)
-#     password = ""
-#     maxpages = 0
-#     caching = True
-#     pagenos=set()
-#
-#     for page in PDFPage.get_pages(fp, pagenos, maxpages=maxpages, password=password,caching=caching, check_extractable=True):
-#         interpreter.process_page(page)
-#
-#     text = retstr.getvalue()
-#
-#     fp.close()
-#     device.close()
-#     retstr.close()
-#     return text
-#
-# print convert_pdf_to_txt('F:/Dropbox/Dropbox/WebCrawler_Assessment_PDFs/Management of Science/June/Doc14.pdf')
+# ======================================= END: Generate percentage distribution for all journals ======================================
