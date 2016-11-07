@@ -1,0 +1,14 @@
+t      test
+
+Bland–Altman
+
+Positive predictive value
+
+Newman–Kuels
+
+
+Mantel–Haenszel
+
+
+Cronbach's alpha
+
