@@ -9,6 +9,8 @@ Dum's test
 
 C-statistic
 
+Hosmer –                     Lemeshow
+
 Youden-J
 
 Mantel Haenszel

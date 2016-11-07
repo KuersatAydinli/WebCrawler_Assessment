@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="076176eb-6392-4c02-b95e-c171b5ab60e2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Test/FakeStatMethods/paper3.txt" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Src/final_analysis_new.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Src/final_distribution_new.dat" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Src/StatPDFPreProcessing.py" afterPath="$PROJECT_DIR$/Src/StatPDFPreProcessing.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Test/FakeStatMethods/paper1.txt" afterPath="$PROJECT_DIR$/Test/FakeStatMethods/paper1.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Test/TestStatPreprocessing.py" afterPath="$PROJECT_DIR$/Test/TestStatPreprocessing.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Test/FakeStatMethods/paper2.txt" afterPath="$PROJECT_DIR$/Test/FakeStatMethods/paper2.txt" />
     </list>
     <ignored path="WebCrawler_Assessment.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,7 +24,7 @@
     <SUITE FILE_PATH="coverage/WebCrawler_Assessment$Scrape_JournalOfManagement.coverage" NAME="Scrape_JournalOfManagement Coverage Results" MODIFIED="1478181001076" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Src" />
     <SUITE FILE_PATH="coverage/WebCrawler_Assessment$Scrape_AmericanJournalOfSociology.coverage" NAME="Scrape_AmericanJournalOfSociology Coverage Results" MODIFIED="1478183341900" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Src" />
     <SUITE FILE_PATH="coverage/WebCrawler_Assessment$StatMethodSearch.coverage" NAME="StatMethodSearch Coverage Results" MODIFIED="1478541165317" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Src" />
-    <SUITE FILE_PATH="coverage/WebCrawler_Assessment$StatPDFPreProcessing.coverage" NAME="StatPDFPreProcessing Coverage Results" MODIFIED="1478554748985" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Src" />
+    <SUITE FILE_PATH="coverage/WebCrawler_Assessment$StatPDFPreProcessing.coverage" NAME="StatPDFPreProcessing Coverage Results" MODIFIED="1478557569265" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Src" />
     <SUITE FILE_PATH="coverage/WebCrawler_Assessment$Unittest_TestCrawlerJournalOfManagement_testFebruary.coverage" NAME="Unittest TestCrawlerJournalOfManagement.testFebruary Coverage Results" MODIFIED="1478087908602" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test" />
     <SUITE FILE_PATH="coverage/WebCrawler_Assessment$Unittest_TestCrawlerJournalOfManagement_testJanuary.coverage" NAME="Unittest TestCrawlerJournalOfManagement.testJanuary Coverage Results" MODIFIED="1478087924088" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test" />
     <SUITE FILE_PATH="coverage/WebCrawler_Assessment$Unittests_in_TestManagementOfScience.coverage" NAME="Unittests in TestManagementOfScience Coverage Results" MODIFIED="1478187781305" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test" />
@@ -36,14 +33,14 @@
     <SUITE FILE_PATH="coverage/WebCrawler_Assessment$Crawler.coverage" NAME="Crawler Coverage Results" MODIFIED="1478039585715" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Src" />
     <SUITE FILE_PATH="coverage/WebCrawler_Assessment$ScrapeManagementOfScience.coverage" NAME="ScrapeManagementOfScience Coverage Results" MODIFIED="1478187618266" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Src" />
     <SUITE FILE_PATH="coverage/WebCrawler_Assessment$Test.coverage" NAME="Test Coverage Results" MODIFIED="1478206945739" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Src" />
-    <SUITE FILE_PATH="coverage/WebCrawler_Assessment$Unittest_TestStatPreprocessing_test_paper_1.coverage" NAME="Unittest TestStatPreprocessing.test_paper_1 Coverage Results" MODIFIED="1478552487790" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test" />
+    <SUITE FILE_PATH="coverage/WebCrawler_Assessment$Unittest_TestStatPreprocessing_test_paper_1.coverage" NAME="Unittest TestStatPreprocessing.test_paper_1 Coverage Results" MODIFIED="1478557682759" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test" />
     <SUITE FILE_PATH="coverage/WebCrawler_Assessment$Unittests_in_TestCrawlerJournalOfManagement.coverage" NAME="Unittests in TestCrawlerJournalOfManagement Coverage Results" MODIFIED="1478182192025" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test" />
     <SUITE FILE_PATH="coverage/WebCrawler_Assessment$Unittest_TestStatPreprocessing_test_paper_1__1_.coverage" NAME="Unittest TestStatPreprocessing.test_paper_1 (1) Coverage Results" MODIFIED="1478554604031" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test" />
     <SUITE FILE_PATH="coverage/WebCrawler_Assessment$Unittests_in_Test.coverage" NAME="Unittests in Test Coverage Results" MODIFIED="1478034667494" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test" />
     <SUITE FILE_PATH="coverage/WebCrawler_Assessment$Unittests_in_TestStatPreprocessing.coverage" NAME="Unittests in TestStatPreprocessing Coverage Results" MODIFIED="1478555134201" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test" />
     <SUITE FILE_PATH="coverage/WebCrawler_Assessment$Unittest_TestCrawlerJournalOfManagement_testNovember.coverage" NAME="Unittest TestCrawlerJournalOfManagement.testNovember Coverage Results" MODIFIED="1478182185031" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test" />
     <SUITE FILE_PATH="coverage/WebCrawler_Assessment$Journal.coverage" NAME="Journal Coverage Results" MODIFIED="1478537373262" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Src" />
-    <SUITE FILE_PATH="coverage/WebCrawler_Assessment$Unittest_TestStatPreprocessing_test_paper_2.coverage" NAME="Unittest TestStatPreprocessing.test_paper_2 Coverage Results" MODIFIED="1478554787097" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test" />
+    <SUITE FILE_PATH="coverage/WebCrawler_Assessment$Unittest_TestStatPreprocessing_test_paper_2.coverage" NAME="Unittest TestStatPreprocessing.test_paper_2 Coverage Results" MODIFIED="1478557747473" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Test" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -54,17 +51,46 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="StatPDFPreProcessing.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="StatPDFPreProcessing.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Src/StatPDFPreProcessing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.24611974">
-              <caret line="114" column="63" selection-start-line="114" selection-start-column="63" selection-end-line="114" selection-end-column="63" />
+            <state vertical-scroll-proportion="-3.5172415">
+              <caret line="105" column="52" selection-start-line="100" selection-start-column="2" selection-end-line="105" selection-end-column="52" />
               <folding>
-                <element signature="e#24#55#0" expanded="true" />
-                <element signature="e#1618#3061#0" expanded="false" />
-                <element signature="e#3107#3380#0" expanded="false" />
-                <element signature="e#3422#3707#0" expanded="false" />
+                <element signature="e#0#31#0" expanded="true" />
+                <element signature="e#2992#3265#0" expanded="false" />
+                <element signature="e#3307#3592#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="final_distribution_new.dat" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Src/final_distribution_new.dat">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.5517242">
+              <caret line="54" column="50" selection-start-line="54" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="final_analysis_new.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Src/final_analysis_new.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-4.034483">
+              <caret line="7" column="243" selection-start-line="7" selection-start-column="243" selection-end-line="7" selection-end-column="243" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ui.py" pinned="false" current-in-tab="false">
+        <entry file="file://C:/python27_x64/Lib/site-packages/astropy/io/ascii/ui.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="695" column="0" selection-start-line="695" selection-start-column="0" selection-end-line="695" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -73,17 +99,7 @@
         <entry file="file://$PROJECT_DIR$/Test/FakeStatMethods/paper2.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="paper2.txt" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Src/paper2.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+              <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -102,18 +118,18 @@
       <file leaf-file-name="methodlist_full.csv" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Test/methodlist_full.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.034483">
-              <caret line="11" column="68" selection-start-line="11" selection-start-column="60" selection-end-line="11" selection-end-column="68" />
+            <state vertical-scroll-proportion="-4.3103447">
+              <caret line="14" column="93" selection-start-line="14" selection-start-column="76" selection-end-line="14" selection-end-column="93" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestStatPreprocessing.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TestStatPreprocessing.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Test/TestStatPreprocessing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="37" column="34" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
+            <state vertical-scroll-proportion="0.6732673">
+              <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -131,21 +147,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestAmericanJournalOfSociology.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Test/TestAmericanJournalOfSociology.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="69" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="69" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="paper1.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Test/FakeStatMethods/paper1.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="15" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
+              <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -185,15 +191,16 @@
         <option value="$PROJECT_DIR$/Src/ExtractPaperContent.py" />
         <option value="$PROJECT_DIR$/Src/StatPDFPreProcessing_Extended.py" />
         <option value="$PROJECT_DIR$/Src/methodlist_full.csv" />
-        <option value="$PROJECT_DIR$/Test/FakeStatMethods/paper2.txt" />
         <option value="$PROJECT_DIR$/Src/Journal.py" />
         <option value="$PROJECT_DIR$/Src/final_analysis.txt" />
         <option value="$PROJECT_DIR$/Src/StatMethodSearch.py" />
         <option value="$PROJECT_DIR$/Src/paper1.txt" />
-        <option value="$PROJECT_DIR$/Test/FakeStatMethods/paper1.txt" />
         <option value="$PROJECT_DIR$/Test/TestStatPreprocessing.py" />
         <option value="$PROJECT_DIR$/Test/FakeStatMethods/paper3.txt" />
+        <option value="$PROJECT_DIR$/Test/FakeStatMethods/paper1.txt" />
+        <option value="$PROJECT_DIR$/Src/final_analysis_new.txt" />
         <option value="$PROJECT_DIR$/Src/StatPDFPreProcessing.py" />
+        <option value="$PROJECT_DIR$/Test/FakeStatMethods/paper2.txt" />
       </list>
     </option>
   </component>
@@ -333,7 +340,7 @@
       <recent name="F:\Wifo_5_Semester\CrowdSourcing\WebCrawler_Assessment\Src" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests in TestStatPreprocessing">
+  <component name="RunManager" selected="Python tests.Unittest TestStatPreprocessing.test_paper_2">
     <configuration default="false" name="StatPDFPreProcessing" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -646,11 +653,11 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittests in TestStatPreprocessing" />
-        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestStatPreprocessing.test_paper_2" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest TestStatPreprocessing.test_paper_2" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest TestStatPreprocessing.test_paper_1" />
         <item index="2" class="java.lang.String" itemvalue="Python.StatPDFPreProcessing" />
-        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest TestStatPreprocessing.test_paper_1 (1)" />
-        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestStatPreprocessing.test_paper_1" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittests in TestStatPreprocessing" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest TestStatPreprocessing.test_paper_1 (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -668,10 +675,10 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittest_TestStatPreprocessing_test_paper_2 - 2016.11.07 at 22h 39m 27s.xml">
-      <configuration name="Unittest TestStatPreprocessing.test_paper_2" configurationId="tests" />
+    <history-entry file="Unittest_TestStatPreprocessing_test_paper_1 - 2016.11.07 at 23h 28m 05s.xml">
+      <configuration name="Unittest TestStatPreprocessing.test_paper_1" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittest_TestStatPreprocessing_test_paper_2 - 2016.11.07 at 22h 39m 49s.xml">
+    <history-entry file="Unittest_TestStatPreprocessing_test_paper_2 - 2016.11.07 at 23h 29m 10s.xml">
       <configuration name="Unittest TestStatPreprocessing.test_paper_2" configurationId="tests" />
     </history-entry>
     <history-entry file="Unittests_in_TestStatPreprocessing - 2016.11.07 at 22h 39m 59s.xml">
@@ -709,7 +716,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21603929" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29296234" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2913257" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19591528" sideWeight="0.509434" order="2" side_tool="true" content_ui="tabs" />
@@ -744,16 +751,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Test/TestAmericanJournalOfSociology.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#15#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Src/Test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1119,34 +1116,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Test/FakeStatMethods/paper2.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Test/FakeStatMethods/paper1.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="15" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Src/paper1.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="12" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Test/methodlist_full.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.034483">
-          <caret line="11" column="68" selection-start-line="11" selection-start-column="60" selection-end-line="11" selection-end-column="68" />
           <folding />
         </state>
       </provider>
@@ -1159,25 +1132,72 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Test/TestStatPreprocessing.py">
+    <entry file="file://C:/python27_x64/Lib/site-packages/astropy/io/ascii/ui.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="37" column="34" selection-start-line="37" selection-start-column="34" selection-end-line="37" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
+          <caret line="695" column="0" selection-start-line="695" selection-start-column="0" selection-end-line="695" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Src/final_analysis_new.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.034483">
+          <caret line="7" column="243" selection-start-line="7" selection-start-column="243" selection-end-line="7" selection-end-column="243" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Src/final_distribution_new.dat">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.5517242">
+          <caret line="54" column="50" selection-start-line="54" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Src/StatPDFPreProcessing.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24611974">
-          <caret line="114" column="63" selection-start-line="114" selection-start-column="63" selection-end-line="114" selection-end-column="63" />
+        <state vertical-scroll-proportion="-3.5172415">
+          <caret line="105" column="52" selection-start-line="100" selection-start-column="2" selection-end-line="105" selection-end-column="52" />
           <folding>
-            <element signature="e#24#55#0" expanded="true" />
-            <element signature="e#1618#3061#0" expanded="false" />
-            <element signature="e#3107#3380#0" expanded="false" />
-            <element signature="e#3422#3707#0" expanded="false" />
+            <element signature="e#0#31#0" expanded="true" />
+            <element signature="e#2992#3265#0" expanded="false" />
+            <element signature="e#3307#3592#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test/FakeStatMethods/paper1.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="12" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test/methodlist_full.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.3103447">
+          <caret line="14" column="93" selection-start-line="14" selection-start-column="76" selection-end-line="14" selection-end-column="93" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test/FakeStatMethods/paper2.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test/TestStatPreprocessing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6732673">
+          <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -2,6 +2,9 @@ Friedman's test
 
 t      test
 
+This will be the above mentioned test with some extra whitespaces: t  test
+
+
 Bland–Altman
 
 Positive predictive value
