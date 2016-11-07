@@ -1,3 +1,5 @@
+Friedman's test
+
 t      test
 
 Bland–Altman
