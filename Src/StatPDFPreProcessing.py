@@ -110,37 +110,42 @@ stat_methods = statPreProcessor.get_method_names()
 
 # ======================================= START: Process Statistical Analysis on all Papers ===============================================
 
-testDir = 'F:/Dropbox/Dropbox/all papers/Management of Science'
-#main_dir = 'F:/all_papers_txt'
-main_dir = 'Test'
-
-counter = 1
-
-journal_counts = {}
-for journal in os.listdir(main_dir):
-    journal_counts[journal] = sum([len(files) for r, d, files in os.walk(main_dir + "/" + journal)])
-print journal_counts
-
-for journalDirectory in os.listdir(main_dir):
-    if journalDirectory == 'American Journal of Sociology':
-        method_count_dict = {}  # count in how many papers a stat. method appears: Key: method - Value: #Papers
-        method_percent_dict = {}  # same as method_count_dict - only with percentage values
-        for method in stat_methods:
-            method_count_dict[method.rstrip().replace("\xe2\x80\x93", "-")] = 0
-
-        for month_issue in os.listdir(main_dir + "/" + journalDirectory):
-            for file in os.listdir(main_dir + "/" + journalDirectory + '/' + month_issue):
-                method_bool_dict = statPreProcessor.create_method_bool_dict_on_txt(
-                    main_dir + "/" + journalDirectory + "/" + month_issue + "/" + file,
-                    stat_methods)
-                print (journalDirectory, month_issue, file, counter)
-                for method, occ in method_bool_dict.iteritems():
-                    if occ == True:
-                        method_count_dict[method.rstrip().replace("\xe2\x80\x93", "-")] += 1
-                counter += 1
-
-        print 'JOURNAL COMPLETED ' + str(journalDirectory)
-        print (str(journalDirectory), method_count_dict)
+# testDir = 'F:/Dropbox/Dropbox/all papers/Management of Science'
+# main_dir = 'F:/all_papers_txt'
+# # main_dir = 'Test'
+#
+# counter = 1
+#
+# journal_counts = {}
+# for journal in os.listdir(main_dir):
+#     journal_counts[journal] = sum([len(files) for r, d, files in os.walk(main_dir + "/" + journal)])
+# print journal_counts
+#
+# journal_method_tuple = []
+#
+# for journalDirectory in os.listdir(main_dir):
+#     method_count_dict = {}  # count in how many papers a stat. method appears: Key: method - Value: #Papers
+#     method_percent_dict = {}  # same as method_count_dict - only with percentage values
+#     for method in stat_methods:
+#         method_count_dict[method.rstrip().replace("\xe2\x80\x93", "-")] = 0
+#
+#     for month_issue in os.listdir(main_dir + "/" + journalDirectory):
+#         for file in os.listdir(main_dir + "/" + journalDirectory + '/' + month_issue):
+#             method_bool_dict = statPreProcessor.create_method_bool_dict_on_txt(
+#                 main_dir + "/" + journalDirectory + "/" + month_issue + "/" + file,
+#                 stat_methods)
+#             print (journalDirectory, month_issue, file, counter)
+#             for method, occ in method_bool_dict.iteritems():
+#                 if occ == True:
+#                     method_count_dict[method.rstrip().replace("\xe2\x80\x93", "-")] += 1
+#             counter += 1
+#
+#     journal_method_tuple.append((journalDirectory,method_count_dict))
+#     print 'JOURNAL COMPLETED ' + str(journalDirectory)
+#     print (str(journalDirectory), method_count_dict)
+#
+# with open('final_analysis_new.txt', 'w') as final_analysis:
+#         final_analysis.write('\n'.join('(%s, %s)' % x for x in journal_method_tuple))
 # ======================================= END: Process Statistical Analysis on all Papers ===============================================
 
 
