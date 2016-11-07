@@ -100,14 +100,14 @@ class StatPDFPreProcessing:
         return stat_method_dict
 
 
-start_time = time.time()
-
-statPreProcessor = StatPDFPreProcessing()
-stat_table = statPreProcessor.create_initial_table()
-method_dict = statPreProcessor.create_stat_method_dict()
-stat_methods = statPreProcessor.get_method_names()
-method_bool_dict = statPreProcessor.create_method_bool_dict_on_txt('paper2.txt',stat_methods)
-print method_bool_dict
+# start_time = time.time()
+#
+# statPreProcessor = StatPDFPreProcessing()
+# stat_table = statPreProcessor.create_initial_table()
+# method_dict = statPreProcessor.create_stat_method_dict()
+# stat_methods = statPreProcessor.get_method_names()
+# method_bool_dict = statPreProcessor.create_method_bool_dict_on_txt('paper2.txt',stat_methods)
+# print method_bool_dict
 
 # ======================================= START: Process Statistical Analysis on all Papers ===============================================
 
