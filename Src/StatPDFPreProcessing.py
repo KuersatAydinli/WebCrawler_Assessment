@@ -1,11 +1,8 @@
 from __future__ import division
 
-import ast
-import os
-import string
-import time
 import re
-from astropy.io import ascii
+import string
+
 from astropy.table import Table, Column
 from textract import process
 
