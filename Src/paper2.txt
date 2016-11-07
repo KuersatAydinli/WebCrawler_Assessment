@@ -1,0 +1,17 @@
+multivariate Analysis of variance
+
+Mann-Whitney
+
+Kruskal - Wallis
+
+
+Dum's test
+
+C-statistic
+
+Youden-J
+
+Mantel Haenszel
+
+
+Random-effect
