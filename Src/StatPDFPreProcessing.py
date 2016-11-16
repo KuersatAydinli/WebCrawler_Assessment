@@ -1,3 +1,5 @@
+from __future__ import print_function
+from __future__ import print_function
 from __future__ import division
 
 import ast
@@ -108,18 +110,18 @@ stat_table = statPreProcessor.create_initial_table()
 method_dict = statPreProcessor.create_stat_method_dict()
 stat_methods = statPreProcessor.get_method_names()
 method_bool_dict = statPreProcessor.create_method_bool_dict_on_txt('paper1.txt', stat_methods)
-print method_bool_dict
+print(method_bool_dict)
 
 # ======================================= START: Process Statistical Analysis on all Papers ===============================================
 testDir = 'F:/Dropbox/Dropbox/all papers/Management of Science'
-main_dir = 'F:/all_papers_txt_new'
+main_dir = 'F:/all_papers_txt_java'
 
 counter = 1
 
 journal_counts = {}
 for journal in os.listdir(main_dir):
     journal_counts[journal] = sum([len(files) for r, d, files in os.walk(main_dir + "/" + journal)])
-print journal_counts
+print(journal_counts)
 
 journal_method_tuple = []
 
@@ -129,23 +131,34 @@ for journalDirectory in os.listdir(main_dir):
     for method in stat_methods:
         method_count_dict[method.rstrip().replace("\xe2\x80\x93", "-")] = 0
 
-    for month_issue in os.listdir(main_dir + "/" + journalDirectory):
-        for file in os.listdir(main_dir + "/" + journalDirectory + '/' + month_issue):
-            method_bool_dict = statPreProcessor.create_method_bool_dict_on_txt(
-                main_dir + "/" + journalDirectory + "/" + month_issue + "/" + file,
-                stat_methods)
-            print (journalDirectory, month_issue, file, counter)
-            for method, occ in method_bool_dict.iteritems():
-                if occ == True:
-                    # print (method, file)
-                    method_count_dict[method.rstrip().replace("\xe2\x80\x93", "-")] += 1
-            counter += 1
+    # for month_issue in os.listdir(main_dir + "/" + journalDirectory):
+    #     for file in os.listdir(main_dir + "/" + journalDirectory + '/' + month_issue):
+    #         method_bool_dict = statPreProcessor.create_method_bool_dict_on_txt(
+    #             main_dir + "/" + journalDirectory + "/" + month_issue + "/" + file,
+    #             stat_methods)
+    #         print (journalDirectory, month_issue, file, counter)
+    #         for method, occ in method_bool_dict.iteritems():
+    #             if occ == True:
+    #                 # print (method, file)
+    #                 method_count_dict[method.rstrip().replace("\xe2\x80\x93", "-")] += 1
+    #         counter += 1
+    for file in os.listdir(main_dir + "/" + journalDirectory):
+        method_bool_dict = statPreProcessor.create_method_bool_dict_on_txt(
+            main_dir + "/" + journalDirectory + "/" + file,
+            stat_methods)
+        print (journalDirectory, file, counter)
+        for method, occ in method_bool_dict.iteritems():
+            if occ == True:
+                # print (method, file)
+                method_count_dict[method.rstrip().replace("\xe2\x80\x93", "-")] += 1
+        counter += 1
 
     journal_method_tuple.append((journalDirectory, method_count_dict))
-    print 'JOURNAL COMPLETED ' + str(journalDirectory)
+    print ('JOURNAL COMPLETED ' + str(journalDirectory))
     print (str(journalDirectory), method_count_dict)
 
-with open('final_analysis_new_second.txt', 'w') as final_analysis:
+# with open('final_analysis_new_second.txt', 'w') as final_analysis:
+with open('final_analysis_new_java.txt', 'w') as final_analysis:
     final_analysis.write('\n'.join('(%s, %s)' % x for x in journal_method_tuple))
 # ======================================= END: Process Statistical Analysis on all Papers ===============================================
 
@@ -159,7 +172,7 @@ with open('final_analysis_new_second.txt', 'w') as final_analysis:
 final_table = Table()
 final_columns = []
 stat_keys = []
-with open('final_analysis_new_second.txt', 'r') as final_analysis:
+with open('final_analysis_new_java.txt', 'r') as final_analysis:
     for line in final_analysis.readlines():
         for jour in journal_counts.keys():
             if jour in line:
@@ -174,6 +187,6 @@ print("--- %s seconds ---" % (time.time() - start_time))
 stat_column = Column(name='stat. Methods', data=stat_keys)
 final_table.add_column(stat_column)
 final_table.add_columns(final_columns)
-print ascii.write(final_table, format='fixed_width')
-ascii.write(final_table, 'final_distribution_new_second.dat', format='fixed_width')
+# ascii.write(final_table, 'final_distribution_new_second.dat', format='fixed_width')
+ascii.write(final_table, 'final_distribution_new_java.dat', format='fixed_width')
 # ======================================= END: Generate percentage distribution for all journals ======================================

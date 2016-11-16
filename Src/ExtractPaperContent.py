@@ -9,6 +9,7 @@ from astropy.io import ascii
 from astropy.table import Table, Column
 from textract import process
 
+
 class ExtractPaperContent():
     rootdir = 'F:/Dropbox/Dropbox/all papers'
     rootdir_txt = 'F:/all_papers_txt'
